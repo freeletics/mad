@@ -861,7 +861,8 @@
                 
                 <p>//<a href="../../../">state-machine</a>/<a href="../">com.freeletics.mad.statemachine</a>/<a href="./">StateMachine</a></p>
 <h1 id="statemachine">StateMachine<a class="headerlink" href="#statemachine" title="Permanent link">&para;</a></h1>
-<p>[common] interface <a href="./">StateMachine</a>&lt;<a href="./">State</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>, <a href="./">Action</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>&gt;</p>
+<p>[common]\
+interface <a href="./">StateMachine</a>&lt;<a href="./">State</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>, <a href="./">Action</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>&gt;</p>
 <p>A state machine that emits <a href="./">State</a> objects through the Flow returned by <a href="state/">state</a>. The state can be mutated through actions passed to <a href="dispatch/">dispatch</a>.</p>
 <h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
 <table>
@@ -873,8 +874,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a name="com.freeletics.mad.statemachine/StateMachine/dispatch/#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/"></a><a href="dispatch/">dispatch</a></td>
-<td><a name="com.freeletics.mad.statemachine/StateMachine/dispatch/#TypeParam(bounds=[kotlin.Any])/PointingToDeclaration/"></a>[common]  <br>Content  <br>abstract suspend fun <a href="dispatch/">dispatch</a>(action: <a href="./">Action</a>)  <br>More info  <br>An an <a href="./">Action</a> to the <a href="./">StateMachine</a>.  <br><br><br></td>
+<td><a href="dispatch/">dispatch</a></td>
+<td>[common]<br>abstract suspend fun <a href="dispatch/">dispatch</a>(action: <a href="./">Action</a>)<br>An an <a href="./">Action</a> to the <a href="./">StateMachine</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -888,8 +889,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a name="com.freeletics.mad.statemachine/StateMachine/state/#/PointingToDeclaration/"></a><a href="state/">state</a></td>
-<td><a name="com.freeletics.mad.statemachine/StateMachine/state/#/PointingToDeclaration/"></a> [common] abstract val <a href="state/">state</a>: StateFlow&lt;<a href="./">State</a>&gt;A Flow that emits the current state as well as all changes to the state.   <br></td>
+<td><a href="state/">state</a></td>
+<td>[common]<br>abstract val <a href="state/">state</a>: StateFlow&lt;<a href="./">State</a>&gt;<br>A Flow that emits the current state as well as all changes to the state.</td>
 </tr>
 </tbody>
 </table>
