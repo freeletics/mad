@@ -1,4 +1,4 @@
 include ":navigator"
-include ":state-machine"
+include ":state-machine", ":state-machine-molecule"
 include ":text-resource"
 include ":whetstone:compiler", ":whetstone:runtime"

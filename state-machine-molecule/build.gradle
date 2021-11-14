@@ -1,0 +1,63 @@
+apply plugin: "com.android.library"
+apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "org.jetbrains.dokka"
+apply plugin: "com.vanniktech.maven.publish"
+apply plugin: 'app.cash.molecule'
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    // still needed for Android projects despite toolchain
+    compileOptions {
+        sourceCompatibility(JavaVersion.VERSION_11)
+        targetCompatibility(JavaVersion.VERSION_11)
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.0.4"
+    }
+}
+
+// workaround for https://youtrack.jetbrains.com/issue/KT-37652
+android.kotlinOptions.freeCompilerArgs += "-Xexplicit-api=strict"
+
+kotlin {
+    explicitApi()
+
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+
+    sourceSets.all {
+        languageSettings {
+            optIn("kotlin.RequiresOptIn")
+        }
+    }
+}
+
+// workaround for https://issuetracker.google.com/issues/194113162
+tasks.withType(JavaCompile).configureEach {
+    javaCompiler = javaToolchains.compilerFor {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+dependencies {
+    api project(":state-machine")
+    api "androidx.compose.runtime:runtime:1.0.4"
+
+    implementation "androidx.compose.ui:ui:1.0.4"
+
+    compileOnly "androidx.annotation:annotation:1.2.0"
+
+    testImplementation "junit:junit:4.13.2"
+    testImplementation "app.cash.turbine:turbine:0.7.0"
+}

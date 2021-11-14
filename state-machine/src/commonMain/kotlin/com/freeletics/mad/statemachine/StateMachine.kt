@@ -19,5 +19,3 @@ public interface StateMachine<State : Any, Action : Any> {
      */
     public suspend fun dispatch(action: Action)
 }
-
-
