@@ -1,0 +1,1922 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Modern Android Development the Freeletics way">
+      
+      
+        <meta name="author" content="Freeletics">
+      
+      
+        <link rel="canonical" href="https://freeletics.github.io/freeletics-mad/navigator/">
+      
+      <link rel="icon" href="../images/icon-freeletics.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.9">
+    
+    
+      
+        <title>Navigator - MAD at Freeletics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.120efc48.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/app.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="white">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#navigator" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MAD at Freeletics" class="md-header__button md-logo" aria-label="MAD at Freeletics" data-md-component="logo">
+      
+  <img src="../images/icon-freeletics.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MAD at Freeletics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Navigator
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/freeletics/freeletics-mad" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MAD Freeletics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MAD at Freeletics" class="md-nav__button md-logo" aria-label="MAD at Freeletics" data-md-component="logo">
+      
+  <img src="../images/icon-freeletics.png" alt="logo">
+
+    </a>
+    MAD at Freeletics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/freeletics/freeletics-mad" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MAD Freeletics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Modern Android Development - The Freeletics Way
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Navigator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Navigator
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#destinations" class="md-nav__link">
+    Destinations
+  </a>
+  
+    <nav class="md-nav" aria-label="Destinations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navroute" class="md-nav__link">
+    NavRoute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navdestination" class="md-nav__link">
+    NavDestination
+  </a>
+  
+    <nav class="md-nav" aria-label="NavDestination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compose" class="md-nav__link">
+    Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragment" class="md-nav__link">
+    Fragment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalability" class="md-nav__link">
+    Scalability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nav-events" class="md-nav__link">
+    Nav events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-concepts" class="md-nav__link">
+    Other concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Other concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-back-stacks" class="md-nav__link">
+    Multiple back stacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-back-clicks" class="md-nav__link">
+    Handling back clicks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-results" class="md-nav__link">
+    Activity results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesting-permissions" class="md-nav__link">
+    Requesting permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destination-results" class="md-nav__link">
+    Destination results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Javadoc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Javadoc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Javadoc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Navigator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Navigator" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Navigator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2" type="checkbox" id="__nav_3_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2">
+          Text resource
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Text resource" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Text resource
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2_1" type="checkbox" id="__nav_3_1_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2_1">
+          Com.freeletics.mad.text
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Com.freeletics.mad.text" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_1_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Com.freeletics.mad.text
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/join-to-text-resource/" class="md-nav__link">
+        Join to text resource
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/plus/" class="md-nav__link">
+        Plus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/set-text/" class="md-nav__link">
+        Set text
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/to-text-resource/" class="md-nav__link">
+        To text resource
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2_1_6" type="checkbox" id="__nav_3_1_2_1_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2_1_6">
+           loading text resource
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label=" loading text resource" data-md-level="5">
+        <label class="md-nav__title" for="__nav_3_1_2_1_6">
+          <span class="md-nav__icon md-icon"></span>
+           loading text resource
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/-loading-text-resource/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/-loading-text-resource/format/" class="md-nav__link">
+        Format
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2_1_7" type="checkbox" id="__nav_3_1_2_1_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2_1_7">
+           text resource
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label=" text resource" data-md-level="5">
+        <label class="md-nav__title" for="__nav_3_1_2_1_7">
+          <span class="md-nav__icon md-icon"></span>
+           text resource
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/-text-resource/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/-text-resource/format/" class="md-nav__link">
+        Format
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2_1_7_3" type="checkbox" id="__nav_3_1_2_1_7_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2_1_7_3">
+           companion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label=" companion" data-md-level="6">
+        <label class="md-nav__title" for="__nav_3_1_2_1_7_3">
+          <span class="md-nav__icon md-icon"></span>
+           companion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/-text-resource/-companion/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/-text-resource/-companion/create-with-quantity/" class="md-nav__link">
+        Create with quantity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/-text-resource/-companion/invoke/" class="md-nav__link">
+        Invoke
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/navigator/text-resource/com.freeletics.mad.text/-text-resource/-companion/join/" class="md-nav__link">
+        Join
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          State machine
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="State machine" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          State machine
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/state-machine/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2" type="checkbox" id="__nav_3_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2_2">
+          State machine
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="State machine" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          State machine
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_1" type="checkbox" id="__nav_3_2_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2_2_1">
+          Com.freeletics.mad.statemachine
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Com.freeletics.mad.statemachine" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_2_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Com.freeletics.mad.statemachine
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/state-machine/state-machine/com.freeletics.mad.statemachine/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_1_2" type="checkbox" id="__nav_3_2_2_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2_2_1_2">
+           state machine
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label=" state machine" data-md-level="5">
+        <label class="md-nav__title" for="__nav_3_2_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+           state machine
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/state-machine/state-machine/com.freeletics.mad.statemachine/-state-machine/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/state-machine/state-machine/com.freeletics.mad.statemachine/-state-machine/dispatch/" class="md-nav__link">
+        Dispatch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/state-machine/state-machine/com.freeletics.mad.statemachine/-state-machine/state/" class="md-nav__link">
+        State
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Text resource
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Text resource" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Text resource
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_2" type="checkbox" id="__nav_3_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_2">
+          Text resource
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Text resource" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Text resource
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_2_1" type="checkbox" id="__nav_3_3_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_2_1">
+          Com.freeletics.mad.text
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Com.freeletics.mad.text" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_3_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Com.freeletics.mad.text
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/join-to-text-resource/" class="md-nav__link">
+        Join to text resource
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/plus/" class="md-nav__link">
+        Plus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/set-text/" class="md-nav__link">
+        Set text
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/to-text-resource/" class="md-nav__link">
+        To text resource
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_2_1_6" type="checkbox" id="__nav_3_3_2_1_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_2_1_6">
+           loading text resource
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label=" loading text resource" data-md-level="5">
+        <label class="md-nav__title" for="__nav_3_3_2_1_6">
+          <span class="md-nav__icon md-icon"></span>
+           loading text resource
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/-loading-text-resource/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/-loading-text-resource/format/" class="md-nav__link">
+        Format
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_2_1_7" type="checkbox" id="__nav_3_3_2_1_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_2_1_7">
+           text resource
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label=" text resource" data-md-level="5">
+        <label class="md-nav__title" for="__nav_3_3_2_1_7">
+          <span class="md-nav__icon md-icon"></span>
+           text resource
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/-text-resource/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/-text-resource/format/" class="md-nav__link">
+        Format
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3_2_1_7_3" type="checkbox" id="__nav_3_3_2_1_7_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_2_1_7_3">
+           companion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label=" companion" data-md-level="6">
+        <label class="md-nav__title" for="__nav_3_3_2_1_7_3">
+          <span class="md-nav__icon md-icon"></span>
+           companion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/-text-resource/-companion/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/-text-resource/-companion/create-with-quantity/" class="md-nav__link">
+        Create with quantity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/-text-resource/-companion/invoke/" class="md-nav__link">
+        Invoke
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Javadoc/text-resource/text-resource/com.freeletics.mad.text/-text-resource/-companion/join/" class="md-nav__link">
+        Join
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#destinations" class="md-nav__link">
+    Destinations
+  </a>
+  
+    <nav class="md-nav" aria-label="Destinations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navroute" class="md-nav__link">
+    NavRoute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navdestination" class="md-nav__link">
+    NavDestination
+  </a>
+  
+    <nav class="md-nav" aria-label="NavDestination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compose" class="md-nav__link">
+    Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fragment" class="md-nav__link">
+    Fragment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalability" class="md-nav__link">
+    Scalability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nav-events" class="md-nav__link">
+    Nav events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-concepts" class="md-nav__link">
+    Other concepts
+  </a>
+  
+    <nav class="md-nav" aria-label="Other concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-back-stacks" class="md-nav__link">
+    Multiple back stacks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-back-clicks" class="md-nav__link">
+    Handling back clicks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-results" class="md-nav__link">
+    Activity results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesting-permissions" class="md-nav__link">
+    Requesting permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destination-results" class="md-nav__link">
+    Destination results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/freeletics/freeletics-mad/edit/master/docs/navigator.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="navigator">Navigator<a class="headerlink" href="#navigator" title="Permanent link">&para;</a></h1>
+<p>This library sits on top of AndroidX Navigation and solves 2 problems that we ran into after
+starting to adopt it.</p>
+<ol>
+<li>
+<p>We believe that navigation should be triggered from the business logic. This way it is easily
+   testable in isolation without having to actually navigate inside a
+   running app. However you usually want to keep Android specific components out of these layers
+   and passing <code>NavController</code> there would risk leaking the Activity.</p>
+</li>
+<li>
+<p>The XML based declaration of destinations did not scale well with our heavily modularized code
+   base. Each screen is usually it&rsquo;s own feature module and those should stay independent of each
+   other. That effectively meant that each XML file had a single destination and you need to define
+   all ids somewhere else so that feature modules can navigate to each other. Since the code
+   generated by safe-args also lives in the feature module it&rsquo;s not usable by other features
+   either. That meant that in the end we didn&rsquo;t get the nice type safety advantages of safe-args
+   and the XML was just boilerplate that didn&rsquo;t form a real graph in the end.</p>
+</li>
+</ol>
+<h2 id="destinations">Destinations<a class="headerlink" href="#destinations" title="Permanent link">&para;</a></h2>
+<p>To replace the XML and get type safety for navigation the library has its own concept of
+destinations. A destination consists of 2 things:
+- the declaration of the destination itself which determines what is shown when the destination is navigated to;
+- the route - a way to reach the destination.</p>
+<h3 id="navroute">NavRoute<a class="headerlink" href="#navroute" title="Permanent link">&para;</a></h3>
+<p>The route part is represented by the <code>NavRoute</code> interface. Each destination will get its own
+implementation of this interface and screens can use it to navigate to the destination.</p>
+<p>The most minimal implementation of <code>NavRoute</code> would be for a screen that doesn&rsquo;t require any
+arguments can be a simple Kotlin object:
+<div class="highlight"><pre><span></span><code><span class="nd">@Parcelize</span>
+<span class="kd">object</span> <span class="nc">HomeScreenRoute</span> <span class="p">:</span> <span class="n">NavRoute</span><span class="p">,</span> <span class="n">Parcelable</span>
+</code></pre></div></p>
+<p>The more common case when a destination needs arguments passed to it would look like this
+<div class="highlight"><pre><span></span><code><span class="nd">@Parcelize</span>
+<span class="kd">data</span> <span class="kd">class</span> <span class="nc">DetailScreenRoute</span><span class="p">(</span>
+    <span class="kd">val</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">NavRoute</span><span class="p">,</span> <span class="n">Parcelable</span>
+</code></pre></div></p>
+<p>Both of these use <code>Parcelable</code> and <code>Parcelize</code> because internally the library will pass the route
+to the screen itself so that it can access the parameters.</p>
+<h3 id="navdestination">NavDestination<a class="headerlink" href="#navdestination" title="Permanent link">&para;</a></h3>
+<p>The other part of the destination is represented by <code>NavDestination</code>. These work slightly
+differently based on whether you are using <code>Fragment</code> navigation or pure Compose navigation
+(a Fragment with composables in it would still count as <code>Fragment</code> navigation).</p>
+<h4 id="compose">Compose<a class="headerlink" href="#compose" title="Permanent link">&para;</a></h4>
+<p>If we take the <code>DetailScreenRoute</code> example from above, declaring the destination for it would look
+like this</p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">detailScreenDestination</span><span class="p">:</span> <span class="n">NavDestination</span> <span class="o">=</span> <span class="n">screenDestination</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">route</span><span class="p">:</span> <span class="n">DetailScreenRoute</span> <span class="o">-&gt;</span>
+    <span class="n">DetailScreen</span><span class="p">(</span><span class="n">route</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>screenDestination</code> function will return a new <code>NavDestination</code> which is linked to the route
+that was passed as the generic type parameter. The lambda function then gets an instance of that
+<code>NavRoute</code> and calls the <code>@Composable</code> function that should be shown.</p>
+<p>The other 2 functions to create destinations are <code>dialogDestination</code> and <code>bottomSheetDestination</code> - they declare destinations that use a dialog or bottom sheet as a container instead of being shown
+full screen.</p>
+<p>These destinations can then be passed to a <code>NavHost</code> by putting them into a set:
+<div class="highlight"><pre><span></span><code><span class="n">setContent</span> <span class="p">{</span>
+    <span class="n">NavHost</span><span class="p">(</span>
+        <span class="n">startRoute</span> <span class="o">=</span> <span class="n">HomeScreenRoute</span><span class="p">,</span> <span class="c1">// route to the screen that should be shown initially</span>
+        <span class="n">destinations</span> <span class="o">=</span> <span class="n">setOf</span><span class="p">(</span><span class="n">homeDestination</span><span class="p">,</span> <span class="n">detailScreenDestination</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h4 id="fragment">Fragment<a class="headerlink" href="#fragment" title="Permanent link">&para;</a></h4>
+<p>The approach for Fragments is very similar</p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">detailScreenDestination</span><span class="p">:</span> <span class="n">NavDestination</span> <span class="o">=</span> <span class="n">screenDestination</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="p">,</span> <span class="n">DetailFragment</span><span class="o">&gt;</span><span class="p">()</span>
+</code></pre></div>
+<p>The <code>screenDestination</code> function will return a new <code>NavDestination</code> which is linked to the route
+that was passed as the first generic type parameter. The second type parameter is the <code>Fragment</code>
+that will be shown for this destination.</p>
+<p>Like the compose destination functions there is also <code>dialogDestination</code> to have a <code>DialogFragment</code>
+destination. <code>bottomSheetDestination</code> does not exist because this would simply be a
+<code>dialogDestination</code> with a <code>BottomSheetDialogFragment</code>.</p>
+<p>These destinations can then be passed to a <code>NavHostFragment</code> by putting them into a set:
+<div class="highlight"><pre><span></span><code><span class="n">navHostFragment</span><span class="p">.</span><span class="na">setGraph</span><span class="p">(</span>
+    <span class="n">startRoute</span> <span class="o">=</span> <span class="n">HomeScreenRoute</span><span class="p">,</span> <span class="c1">// route to the screen that should be shown initially</span>
+    <span class="n">destinations</span> <span class="o">=</span> <span class="n">setOf</span><span class="p">(</span><span class="n">homeDestination</span><span class="p">,</span> <span class="n">detailScreenDestination</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div></p>
+<p>Inside a Fragment the <code>requireRoute</code> extension method can be used to obtain the <code>NavRoute</code> 
+used to navigate to it.</p>
+<p>For example the <code>DetailFragment</code> could do this to obtain <code>DetailScreenRoute</code> and access the <code>id</code> in
+it:
+<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">route</span> <span class="o">=</span> <span class="n">requireRoute</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="o">&gt;</span><span class="p">()</span>
+</code></pre></div></p>
+<h4 id="scalability">Scalability<a class="headerlink" href="#scalability" title="Permanent link">&para;</a></h4>
+<p>For the simplicity of the examples above the destinations were just kept in a variable and
+the set was created directly calling <code>NavHost</code>/<code>setGraph</code>. In practice it makes more sense
+to use dagger multibindings for these:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Module</span>
+<span class="kd">object</span> <span class="nc">DetailScreenModule</span> <span class="p">{</span>
+    <span class="nd">@Provides</span>
+    <span class="nd">@IntoSet</span>
+    <span class="kd">fun</span> <span class="nf">provideDetailScreenDestinations</span><span class="p">():</span> <span class="n">NavDestination</span> <span class="o">=</span> <span class="n">screenDestination</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="n">DetailScreen</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then an <code>Activity</code> or something else can simply inject a <code>Set&lt;NavDestination&gt;</code>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="n">ComponentActivity</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">@Inject</span>
+    <span class="kd">lateinit</span> <span class="kd">var</span> <span class="nv">destinations</span><span class="p">:</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">NavDestination</span><span class="o">&gt;</span>
+
+    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">()</span>
+        <span class="c1">// inject the activity</span>
+        <span class="n">setContent</span><span class="p">{</span>
+            <span class="n">NavHost</span><span class="p">(</span>
+                <span class="n">startRoute</span> <span class="o">=</span> <span class="n">HomeScreenRoute</span><span class="p">,</span>
+                <span class="n">destinations</span> <span class="o">=</span> <span class="n">destinations</span>
+            <span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h2 id="nav-events">Nav events<a class="headerlink" href="#nav-events" title="Permanent link">&para;</a></h2>
+<p>The third main class that the library provides is <code>NavEventNavigator</code>. This class solves the first
+of our 2 problems, triggering navigation from outside the UI layer. For that it has all the
+primitive navigation operations:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// navigate to the destination that the given route leads to</span>
+<span class="n">navigator</span><span class="p">.</span><span class="na">navigateTo</span><span class="p">(</span><span class="n">DetailScreenRoute</span><span class="p">(</span><span class="s">&quot;some-id&quot;</span><span class="p">))</span>
+<span class="c1">// navigate up in the hierarchy</span>
+<span class="n">navigator</span><span class="p">.</span><span class="na">navigateUp</span><span class="p">()</span>
+<span class="c1">// navigate to the previous destination in the backstack</span>
+<span class="n">navigator</span><span class="p">.</span><span class="na">navigateBack</span><span class="p">()</span>
+<span class="c1">// navigate back to the destination belonging to the referenced route and remove all destinations</span>
+<span class="c1">// in between from the back stack, depending on inclusive the destination </span>
+<span class="n">navigator</span><span class="p">.</span><span class="na">navigateBackTo</span><span class="o">&lt;</span><span class="n">MainScreenRoute</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inclusive</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
+</code></pre></div>
+<p>These methods can be called from anywhere and it&rsquo;s safe to hold an instance of the
+<code>NavEventNavigator</code> in places where it survives configuration changes.</p>
+<p>For the navigation to actually be executed call <code>handleNavigation(this, navigator)</code> from your one of
+the Fragment lifecycle methods or <code>NavigationSetup(navigator)</code> from a composable function.</p>
+<p>It&rsquo;s possible to simply instantiate an instance of <code>NavEventNavigator</code> but in the Freeletics code
+base we usually create a subclass in each feature module that has some higher level methods. For
+example it could have a method that encapsulates the creation of the route:
+<div class="highlight"><pre><span></span><code><span class="kd">fun</span> <span class="nf">navigateToDetail</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">navigateTo</span><span class="p">(</span><span class="n">DetailScreenRoute</span><span class="p">(</span><span class="n">id</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+They can also contain more complex logic like navigating to one route or another based on a
+parameter or first calling <code>navigateBackTo</code> and then <code>navigateTo</code> with a new route. This
+keeps the navigation logic more separated and it can be easily called from more than one place.</p>
+<h2 id="other-concepts">Other concepts<a class="headerlink" href="#other-concepts" title="Permanent link">&para;</a></h2>
+<h3 id="multiple-back-stacks">Multiple back stacks<a class="headerlink" href="#multiple-back-stacks" title="Permanent link">&para;</a></h3>
+<p>The library provides support for AndroidX Navigation&rsquo;s multi back stack feature. To use the feature
+the root of a back stack should use <code>NavRoot</code> instead of <code>NavRoute</code> for it&rsquo;s route class. Then it&rsquo;s
+possible to navigate to the backstack using
+<code>NavEventNavigator.navigateToRoot(ProfileTabRoot, restoreRootState = false)</code>. This will save the
+current back stack&rsquo;s state, clear it and then do one of two things based on the <code>restoreRootState</code>
+parameter. If it is <code>true</code> and there is one it will restore the back stack that is associated
+with <code>ProfileTabRoot</code>. If it&rsquo;s <code>false</code> or there is no matching back stack that was previously saved
+the destination for <code>ProfileTabRoot</code> will be shown.</p>
+<h3 id="handling-back-clicks">Handling back clicks<a class="headerlink" href="#handling-back-clicks" title="Permanent link">&para;</a></h3>
+<p><code>NavEventNavigator</code> has a <code>backPresses()</code> method that returns <code>Flow&lt;Unit&gt;</code> which will emit
+whenever Android&rsquo;s back button is used. While this <code>Flow</code> is collected the default back handling
+is disabled. This can be used to for example show a confirmation dialog before navigating back.</p>
+<h3 id="activity-results">Activity results<a class="headerlink" href="#activity-results" title="Permanent link">&para;</a></h3>
+<p>External SDKs and the framework often provide an <code>Activity</code> that is supposed to be used with
+<code>startActivityForResult</code>. AndroidX already introduced <code>ActivityResultContract</code> to simplify handling
+this and <code>NavEventNavigator</code> uses them to also enable starting them from outside the UI layer
+and receiving results there.</p>
+<p>To use the API <code>registerForActivityResult</code> needs to be called with an instance of the wanted
+<code>ActivityResultContract</code>. This needs to happen before <code>handleNavigation</code>/<code>NavigationSetup</code> 
+is called for the navigator, so it is recommended to do this during the construction of the
+navigator. The method returns an <code>ActivityResultRequest</code> object that can be then used for two 
+things. It can be passed to <code>navigateForResult(request)</code> to launch the contract. It also has a
+<code>results</code> property that returns a <code>Flow&lt;O&gt;</code>, where <code>O</code> is the contract&rsquo;s output type, to make it
+possible to receive the returned results. </p>
+<p>This is an example navigator that allow navigating to the camera or the system file picker to 
+take or pick an image:
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MyNavigator</span> <span class="p">:</span> <span class="n">NavEventNavigator</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="nv">cameraImageRequest</span> <span class="o">=</span> <span class="n">registerForActivityResult</span><span class="p">(</span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">TakePicture</span><span class="p">())</span>
+    <span class="kd">val</span> <span class="nv">galleryImageRequest</span> <span class="o">=</span> <span class="n">registerForActivityResult</span><span class="p">(</span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">GetContent</span><span class="p">())</span>
+
+
+    <span class="kd">fun</span> <span class="nf">takePicture</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span> <span class="n">Uri</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// the uri here is the parameter that the TakePicture contract expects </span>
+        <span class="n">navigateForResult</span><span class="p">(</span><span class="n">cameraImageRequest</span><span class="p">,</span> <span class="n">uri</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">fun</span> <span class="nf">pickPicture</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">navigateForResult</span><span class="p">(</span><span class="n">galleryImageRequest</span><span class="p">,</span> <span class="s">&quot;image/*&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>In the example above <code>cameraImageRequest.results</code> returns a <code>Flow&lt;Boolean&gt;</code> and 
+<code>galleryImageRequest.results</code> a <code>Flow&lt;Uri?&gt;</code> which can both be collected to handle the results.</p>
+<h3 id="requesting-permissions">Requesting permissions<a class="headerlink" href="#requesting-permissions" title="Permanent link">&para;</a></h3>
+<p>The Activity result APIs can already be used with <code>ActivityResultContracts.RequestPermission</code> or
+<code>ActivityResultContracts.RequestMultiplePermissions</code> to also handle requesting Android runtime 
+permission requests. <code>NavEventNavigator</code> provides a slightly higher level API for this.</p>
+<p>To use this call <code>registerForPermissionResult</code>, which should be done during the construction
+of the navigator or shortly after. This can then be passed to <code>requestPermissions</code> with one or
+more permission to request to launch the request. Results can be collected through the 
+<code>Flow&lt;Map&lt;String, PermissionResult&gt;&gt;</code> that is returned by the <code>results</code> property of request. </p>
+<p>The <code>PermissionResult</code> is the main advantage of using the API instead for the Activity result APIs.
+Instead of being a simple <code>Boolean</code> for granted/denied it is an enum with <code>GRANTED</code>, <code>DENIED</code> 
+and <code>DENIED_PERMANENTLY</code>. After it receives the result from the contract, the library will 
+internally use <code>Activity.shouldShowRequestPermissionRationale(permission)</code> to figure out if a 
+denial was a permanent, meaning the user won&rsquo;t be asked again, or not. This is usually not easily 
+possible since it requires a reference to an <code>Activity</code>.</p>
+<p>An example usage can look like this:
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MyNavigator</span> <span class="p">:</span> <span class="n">NavEventNavigator</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// use permissionRequest.results somewhere to handle results</span>
+    <span class="kd">val</span> <span class="nv">permissionRequest</span> <span class="o">=</span> <span class="n">registerForPermissionsResult</span><span class="p">()</span>
+
+    <span class="kd">fun</span> <span class="nf">requestContactsPermission</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span> <span class="n">Uri</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">requestPermissions</span><span class="p">(</span><span class="n">permissionRequest</span><span class="p">,</span> <span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">fun</span> <span class="nf">requestLocationPermissions</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">requestPermissions</span><span class="p">(</span>
+            <span class="n">permissionRequest</span><span class="p">,</span> 
+            <span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span><span class="p">,</span> 
+            <span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="destination-results">Destination results<a class="headerlink" href="#destination-results" title="Permanent link">&para;</a></h3>
+<p>The last result API of the library is for returning hand handling results from screens inside 
+the app that also use <code>NavEventNavigator</code>.</p>
+<p>The setup is similar to Activity results and permissions. The 
+<code>registerForNavigationResult&lt;Route, Result&gt;</code> needs to be called during construction of the navigator
+or shortly after. <code>Route</code> in this case should be the <code>NavRoute</code> class for the curren screen. While
+<code>Result</code> is the type of the expected result which can be any <code>Parcelable</code> class. The register method
+will like the others than return a request object, which has <code>results</code> property that returns a 
+<code>Flow&lt;Result&gt;</code> to collect the results.</p>
+<p>The navigation to the screen from which the result should be returned is a regular call to 
+<code>navigateTo</code>. However the <code>NavRoute</code> class for that target destination should have 
+<code>NavigationResultRequest.Key&lt;Result&gt;</code> as a parameter. An instance of such a <code>Key</code> can be obtained
+from the <code>key</code> property of the request object.</p>
+<p>The target screen can then simply call <code>devliverNavigationResult(route.key, result)</code> on its own
+navigator to send the result and afterwards remove itself from the back stack with <code>navigateBack</code>.</p>
+<p>The navigator for a hypothetical <code>ScreenA</code> that wants to receive a result from <code>ScreenB</code> would look
+like this
+<div class="highlight"><pre><span></span><code><span class="kd">data</span> <span class="kd">class</span> <span class="nc">MessageResult</span><span class="p">(</span><span class="kd">val</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">):</span> <span class="n">Parcelable</span>
+
+<span class="kd">class</span> <span class="nc">ScreenANavigator</span> <span class="p">:</span> <span class="n">NavEventNavigator</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// use request.results somewhere to handle the results that ScreenB delivers</span>
+    <span class="kd">val</span> <span class="nv">request</span> <span class="o">=</span> <span class="n">registerForNavigationResult</span><span class="o">&lt;</span><span class="n">ScreenARoute</span><span class="p">,</span> <span class="n">MessageResult</span><span class="o">&gt;</span>
+
+    <span class="kd">fun</span> <span class="nf">navigateToScreenB</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// if needed ScreenBRoute could also have additional parameters</span>
+        <span class="n">navigateTo</span><span class="p">(</span><span class="n">ScreenBRoute</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="na">key</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>And then the navigator for <code>ScreenB</code>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">ScreenANavigator</span><span class="p">(</span>
+   <span class="kd">val</span> <span class="nv">route</span><span class="p">:</span> <span class="n">ScreenBRoute</span>
+<span class="p">)</span> <span class="p">:</span> <span class="n">NavEventNavigator</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">fun</span> <span class="nf">deliverMessage</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">deliverNavigationResult</span><span class="p">(</span><span class="n">route</span><span class="p">.</span><span class="na">key</span><span class="p">,</span> <span class="n">MessageResult</span><span class="p">(</span><span class="n">message</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
+<p>The <code>NavEventNavigator</code> exposes a <code>navEvents</code> property that has <code>Flow&lt;NavEvent&gt;</code> as type. On any
+of the navigation calls this <code>Flow</code> will emit a new <code>NavEvent</code>. To test logic that triggers 
+navigation this can be used together with the <a href="https://github.com/cashapp/turbine">Turbine library</a>
+to assert that the correct events are emitted. </p>
+<div class="highlight"><pre><span></span><code><span class="n">navigator</span><span class="p">.</span><span class="na">navEvents</span><span class="p">.</span><span class="na">test</span> <span class="p">{</span>
+    <span class="n">navigator</span><span class="p">.</span><span class="na">navigateTo</span><span class="p">(</span><span class="n">TestRoute</span><span class="p">())</span>
+    <span class="n">assertThat</span><span class="p">(</span><span class="n">awaitItem</span><span class="p">).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="n">NavEvent</span><span class="p">.</span><span class="na">NavigateToEvent</span><span class="p">(</span><span class="n">TestRoute</span><span class="p">()))</span>
+    <span class="n">navigator</span><span class="p">.</span><span class="na">navigateBack</span><span class="p">()</span>
+    <span class="n">assertThat</span><span class="p">(</span><span class="n">awaitItem</span><span class="p">).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="n">NavEvent</span><span class="p">.</span><span class="na">BackEvent</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This is a very simplified example, in reality the test would most likely not call the navigator
+itself but some other code that uses the navigator internally.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Modern Android Development - The Freeletics Way" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Modern Android Development - The Freeletics Way
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Javadoc/navigator/" class="md-footer__link md-footer__link--next" aria-label="Next: Index" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Index
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 Freeletics.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6e54b5cd.min.js"></script>
+      
+    
+  </body>
+</html>
