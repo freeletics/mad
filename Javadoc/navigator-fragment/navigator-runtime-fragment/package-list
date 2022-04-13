@@ -1,0 +1,18 @@
+$dokka.format:gfm-v1
+$dokka.linkExtension:md
+$dokka.location:com.freeletics.mad.navigator.fragment////PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/index.md
+$dokka.location:com.freeletics.mad.navigator.fragment//ActivityDestination/#android.content.Intent/PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/-activity-destination.md
+$dokka.location:com.freeletics.mad.navigator.fragment//DialogDestination/#/PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/-dialog-destination.md
+$dokka.location:com.freeletics.mad.navigator.fragment//ScreenDestination/#/PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/-screen-destination.md
+$dokka.location:com.freeletics.mad.navigator.fragment//handleNavigation/#androidx.fragment.app.Fragment#com.freeletics.mad.navigator.NavEventNavigator/PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/handle-navigation.md
+$dokka.location:com.freeletics.mad.navigator.fragment//requireRoute/androidx.fragment.app.Fragment#/PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/require-route.md
+$dokka.location:com.freeletics.mad.navigator.fragment//setGraph/androidx.navigation.fragment.NavHostFragment#com.freeletics.mad.navigator.BaseRoute#kotlin.collections.Set[com.freeletics.mad.navigator.fragment.NavDestination]/PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/set-graph.md
+$dokka.location:com.freeletics.mad.navigator.fragment/NavDestination.Activity///PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/-nav-destination/-activity/index.md
+$dokka.location:com.freeletics.mad.navigator.fragment/NavDestination.Activity/Activity/#kotlin.reflect.KClass[TypeParam(bounds=[com.freeletics.mad.navigator.NavRoute])]#android.content.Intent/PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/-nav-destination/-activity/-activity.md
+$dokka.location:com.freeletics.mad.navigator.fragment/NavDestination.Dialog///PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/-nav-destination/-dialog/index.md
+$dokka.location:com.freeletics.mad.navigator.fragment/NavDestination.Dialog/Dialog/#kotlin.reflect.KClass[TypeParam(bounds=[com.freeletics.mad.navigator.NavRoute])]#kotlin.reflect.KClass[androidx.fragment.app.DialogFragment]/PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/-nav-destination/-dialog/-dialog.md
+$dokka.location:com.freeletics.mad.navigator.fragment/NavDestination.Screen///PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/-nav-destination/-screen/index.md
+$dokka.location:com.freeletics.mad.navigator.fragment/NavDestination.Screen/Screen/#kotlin.reflect.KClass[TypeParam(bounds=[com.freeletics.mad.navigator.BaseRoute])]#kotlin.reflect.KClass[androidx.fragment.app.Fragment]/PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/-nav-destination/-screen/-screen.md
+$dokka.location:com.freeletics.mad.navigator.fragment/NavDestination///PointingToDeclaration/navigator-runtime-fragment/com.freeletics.mad.navigator.fragment/-nav-destination/index.md
+com.freeletics.mad.navigator.fragment
+
