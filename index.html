@@ -246,6 +246,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#navigator" class="md-nav__link">
+    Navigator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#statemachine" class="md-nav__link">
     StateMachine
   </a>
@@ -924,6 +931,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#navigator" class="md-nav__link">
+    Navigator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#statemachine" class="md-nav__link">
     StateMachine
   </a>
@@ -961,6 +975,17 @@ always use them in the way they are advertised in Google&rsquo;s tutorials.
 This project show cases our own flavored version of Modern Android Development
 as well as some of our own utilities.</p>
 <p><strong>This repository is a work in progress. More will be added over time.</strong></p>
+<h2 id="navigator">Navigator<a class="headerlink" href="#navigator" title="Permanent link">&para;</a></h2>
+<p>The navigator library is a wrapper around AndroidX navigation that allows to separate navigation
+logic from the UI layer and provides a scalable approach to type safe navigation in a highly
+modularized code base.</p>
+<p>For more information check out it&rsquo;s <a href="navigator/README.md">README</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span> <span class="s1">&#39;com.freeletics.mad:navigator:0.3.0&#39;</span>
+<span class="c1">// when using composables for navigation</span>
+<span class="n">implementation</span> <span class="s1">&#39;com.freeletics.mad:navigator-compose:0.3.0&#39;</span>
+<span class="c1">// when using fragments for navigation (even if these contain composables)</span>
+<span class="n">implementation</span> <span class="s1">&#39;com.freeletics.mad:navigator-fragment:0.3.0&#39;</span>
+</code></pre></div>
 <h2 id="statemachine">StateMachine<a class="headerlink" href="#statemachine" title="Permanent link">&para;</a></h2>
 <p><code>StateMachine</code> is a very simple interface to implement a StateMachine with the concept of emitting
 state through a <code>StateFlow</code> and receiving input actions to mutate that state.</p>
