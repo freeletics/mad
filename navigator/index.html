@@ -4177,7 +4177,7 @@ destination. <code>bottomSheetDestination</code> does not exist because this wou
     <span class="n">destinations</span> <span class="o">=</span> <span class="n">setOf</span><span class="p">(</span><span class="n">homeDestination</span><span class="p">,</span> <span class="n">detailScreenDestination</span><span class="p">)</span>
 <span class="p">)</span>
 </code></pre></div></p>
-<p>Inside a Fragment the <code>requireRoute</code> extension method can be used to obtain the <code>NavRoute</code> 
+<p>Inside a Fragment the <code>requireRoute</code> extension method can be used to obtain the <code>NavRoute</code>
 used to navigate to it.</p>
 <p>For example the <code>DetailFragment</code> could do this to obtain <code>DetailScreenRoute</code> and access the <code>id</code> in
 it:
@@ -4224,7 +4224,7 @@ primitive navigation operations:</p>
 <span class="c1">// navigate to the previous destination in the backstack</span>
 <span class="n">navigator</span><span class="p">.</span><span class="na">navigateBack</span><span class="p">()</span>
 <span class="c1">// navigate back to the destination belonging to the referenced route and remove all destinations</span>
-<span class="c1">// in between from the back stack, depending on inclusive the destination </span>
+<span class="c1">// in between from the back stack, depending on inclusive the destination</span>
 <span class="n">navigator</span><span class="p">.</span><span class="na">navigateBackTo</span><span class="o">&lt;</span><span class="n">MainScreenRoute</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inclusive</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
 </code></pre></div>
 <p>These methods can be called from anywhere and it&rsquo;s safe to hold an instance of the
@@ -4261,13 +4261,13 @@ is disabled. This can be used to for example show a confirmation dialog before n
 this and <code>NavEventNavigator</code> uses them to also enable starting them from outside the UI layer
 and receiving results there.</p>
 <p>To use the API <code>registerForActivityResult</code> needs to be called with an instance of the wanted
-<code>ActivityResultContract</code>. This needs to happen before <code>handleNavigation</code>/<code>NavigationSetup</code> 
+<code>ActivityResultContract</code>. This needs to happen before <code>handleNavigation</code>/<code>NavigationSetup</code>
 is called for the navigator, so it is recommended to do this during the construction of the
-navigator. The method returns an <code>ActivityResultRequest</code> object that can be then used for two 
+navigator. The method returns an <code>ActivityResultRequest</code> object that can be then used for two
 things. It can be passed to <code>navigateForResult(request)</code> to launch the contract. It also has a
 <code>results</code> property that returns a <code>Flow&lt;O&gt;</code>, where <code>O</code> is the contract&rsquo;s output type, to make it
-possible to receive the returned results. </p>
-<p>This is an example navigator that allow navigating to the camera or the system file picker to 
+possible to receive the returned results.</p>
+<p>This is an example navigator that allow navigating to the camera or the system file picker to
 take or pick an image:
 <div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MyNavigator</span> <span class="p">:</span> <span class="n">NavEventNavigator</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">val</span> <span class="nv">cameraImageRequest</span> <span class="o">=</span> <span class="n">registerForActivityResult</span><span class="p">(</span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">TakePicture</span><span class="p">())</span>
@@ -4275,7 +4275,7 @@ take or pick an image:
 
 
     <span class="kd">fun</span> <span class="nf">takePicture</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span> <span class="n">Uri</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// the uri here is the parameter that the TakePicture contract expects </span>
+        <span class="c1">// the uri here is the parameter that the TakePicture contract expects</span>
         <span class="n">navigateForResult</span><span class="p">(</span><span class="n">cameraImageRequest</span><span class="p">,</span> <span class="n">uri</span><span class="p">)</span>
     <span class="p">}</span>
 
@@ -4284,21 +4284,21 @@ take or pick an image:
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
-<p>In the example above <code>cameraImageRequest.results</code> returns a <code>Flow&lt;Boolean&gt;</code> and 
+<p>In the example above <code>cameraImageRequest.results</code> returns a <code>Flow&lt;Boolean&gt;</code> and
 <code>galleryImageRequest.results</code> a <code>Flow&lt;Uri?&gt;</code> which can both be collected to handle the results.</p>
 <h3 id="requesting-permissions">Requesting permissions<a class="headerlink" href="#requesting-permissions" title="Permanent link">&para;</a></h3>
 <p>The Activity result APIs can already be used with <code>ActivityResultContracts.RequestPermission</code> or
-<code>ActivityResultContracts.RequestMultiplePermissions</code> to also handle requesting Android runtime 
+<code>ActivityResultContracts.RequestMultiplePermissions</code> to also handle requesting Android runtime
 permission requests. <code>NavEventNavigator</code> provides a slightly higher level API for this.</p>
 <p>To use this call <code>registerForPermissionResult</code>, which should be done during the construction
 of the navigator or shortly after. This can then be passed to <code>requestPermissions</code> with one or
-more permission to request to launch the request. Results can be collected through the 
-<code>Flow&lt;Map&lt;String, PermissionResult&gt;&gt;</code> that is returned by the <code>results</code> property of request. </p>
+more permission to request to launch the request. Results can be collected through the
+<code>Flow&lt;Map&lt;String, PermissionResult&gt;&gt;</code> that is returned by the <code>results</code> property of request.</p>
 <p>The <code>PermissionResult</code> is the main advantage of using the API instead for the Activity result APIs.
-Instead of being a simple <code>Boolean</code> for granted/denied it is an enum with <code>GRANTED</code>, <code>DENIED</code> 
-and <code>DENIED_PERMANENTLY</code>. After it receives the result from the contract, the library will 
-internally use <code>Activity.shouldShowRequestPermissionRationale(permission)</code> to figure out if a 
-denial was a permanent, meaning the user won&rsquo;t be asked again, or not. This is usually not easily 
+Instead of being a simple <code>Boolean</code> for granted/denied it is an enum with <code>GRANTED</code>, <code>DENIED</code>
+and <code>DENIED_PERMANENTLY</code>. After it receives the result from the contract, the library will
+internally use <code>Activity.shouldShowRequestPermissionRationale(permission)</code> to figure out if a
+denial was a permanent, meaning the user won&rsquo;t be asked again, or not. This is usually not easily
 possible since it requires a reference to an <code>Activity</code>.</p>
 <p>An example usage can look like this:
 <div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MyNavigator</span> <span class="p">:</span> <span class="n">NavEventNavigator</span><span class="p">()</span> <span class="p">{</span>
@@ -4311,24 +4311,24 @@ possible since it requires a reference to an <code>Activity</code>.</p>
 
     <span class="kd">fun</span> <span class="nf">requestLocationPermissions</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">requestPermissions</span><span class="p">(</span>
-            <span class="n">permissionRequest</span><span class="p">,</span> 
-            <span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span><span class="p">,</span> 
+            <span class="n">permissionRequest</span><span class="p">,</span>
+            <span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span><span class="p">,</span>
             <span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <h3 id="destination-results">Destination results<a class="headerlink" href="#destination-results" title="Permanent link">&para;</a></h3>
-<p>The last result API of the library is for returning hand handling results from screens inside 
+<p>The last result API of the library is for returning hand handling results from screens inside
 the app that also use <code>NavEventNavigator</code>.</p>
-<p>The setup is similar to Activity results and permissions. The 
+<p>The setup is similar to Activity results and permissions. The
 <code>registerForNavigationResult&lt;Route, Result&gt;</code> needs to be called during construction of the navigator
 or shortly after. <code>Route</code> in this case should be the <code>NavRoute</code> class for the curren screen. While
 <code>Result</code> is the type of the expected result which can be any <code>Parcelable</code> class. The register method
-will like the others than return a request object, which has <code>results</code> property that returns a 
+will like the others than return a request object, which has <code>results</code> property that returns a
 <code>Flow&lt;Result&gt;</code> to collect the results.</p>
-<p>The navigation to the screen from which the result should be returned is a regular call to 
-<code>navigateTo</code>. However the <code>NavRoute</code> class for that target destination should have 
+<p>The navigation to the screen from which the result should be returned is a regular call to
+<code>navigateTo</code>. However the <code>NavRoute</code> class for that target destination should have
 <code>NavigationResultRequest.Key&lt;Result&gt;</code> as a parameter. An instance of such a <code>Key</code> can be obtained
 from the <code>key</code> property of the request object.</p>
 <p>The target screen can then simply call <code>devliverNavigationResult(route.key, result)</code> on its own
@@ -4359,9 +4359,9 @@ like this
 </code></pre></div></p>
 <h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
 <p>The <code>NavEventNavigator</code> exposes a <code>navEvents</code> property that has <code>Flow&lt;NavEvent&gt;</code> as type. On any
-of the navigation calls this <code>Flow</code> will emit a new <code>NavEvent</code>. To test logic that triggers 
+of the navigation calls this <code>Flow</code> will emit a new <code>NavEvent</code>. To test logic that triggers
 navigation this can be used together with the <a href="https://github.com/cashapp/turbine">Turbine library</a>
-to assert that the correct events are emitted. </p>
+to assert that the correct events are emitted.</p>
 <div class="highlight"><pre><span></span><code><span class="n">navigator</span><span class="p">.</span><span class="na">navEvents</span><span class="p">.</span><span class="na">test</span> <span class="p">{</span>
     <span class="n">navigator</span><span class="p">.</span><span class="na">navigateTo</span><span class="p">(</span><span class="n">TestRoute</span><span class="p">())</span>
     <span class="n">assertThat</span><span class="p">(</span><span class="n">awaitItem</span><span class="p">).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="n">NavEvent</span><span class="p">.</span><span class="na">NavigateToEvent</span><span class="p">(</span><span class="n">TestRoute</span><span class="p">()))</span>
