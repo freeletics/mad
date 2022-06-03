@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://freeletics.github.io/freeletics-mad/navigator/">
       
       <link rel="icon" href="../images/icon-freeletics.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.0">
     
     
       
@@ -23,15 +23,16 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fd896c8a.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
           <meta name="theme-color" content="#000000">
         
+      
       
     
     
@@ -4543,14 +4544,14 @@ destinations. A destination consists of 2 things:
 implementation of this interface and screens can use it to navigate to the destination.</p>
 <p>The most minimal implementation of <code>NavRoute</code> would be for a screen that doesn&rsquo;t require any
 arguments can be a simple Kotlin object:
-<div class="highlight"><pre><span></span><code><span class="nd">@Parcelize</span>
-<span class="kd">object</span> <span class="nc">HomeScreenRoute</span> <span class="p">:</span> <span class="n">NavRoute</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@Parcelize</span><span class="w"></span>
+<span class="kd">object</span><span class="w"> </span><span class="nc">HomeScreenRoute</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NavRoute</span><span class="w"></span>
 </code></pre></div></p>
 <p>The more common case when a destination needs arguments passed to it would look like this
-<div class="highlight"><pre><span></span><code><span class="nd">@Parcelize</span>
-<span class="kd">data</span> <span class="kd">class</span> <span class="nc">DetailScreenRoute</span><span class="p">(</span>
-    <span class="kd">val</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-<span class="p">)</span> <span class="p">:</span> <span class="n">NavRoute</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@Parcelize</span><span class="w"></span>
+<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">DetailScreenRoute</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NavRoute</span><span class="w"></span>
 </code></pre></div></p>
 <p>Internally the library will pass the route to the screen itself so that it can access the parameters.</p>
 <h3 id="navdestination">NavDestination<a class="headerlink" href="#navdestination" title="Permanent link">&para;</a></h3>
@@ -4560,9 +4561,9 @@ differently based on whether you are using <code>Fragment</code> navigation or p
 <h4 id="compose">Compose<a class="headerlink" href="#compose" title="Permanent link">&para;</a></h4>
 <p>If we take the <code>DetailScreenRoute</code> example from above, declaring the destination for it would look
 like this</p>
-<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">detailScreenDestination</span><span class="p">:</span> <span class="n">NavDestination</span> <span class="o">=</span> <span class="n">ScreenDestination</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">route</span><span class="p">:</span> <span class="n">DetailScreenRoute</span> <span class="o">-&gt;</span>
-    <span class="n">DetailScreen</span><span class="p">(</span><span class="n">route</span><span class="p">)</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">detailScreenDestination</span><span class="p">:</span><span class="w"> </span><span class="n">NavDestination</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScreenDestination</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">route</span><span class="p">:</span><span class="w"> </span><span class="n">DetailScreenRoute</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">DetailScreen</span><span class="p">(</span><span class="n">route</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>The <code>ScreenDestination</code> function will return a new <code>NavDestination</code> which is linked to the route
 that was passed as the generic type parameter. The lambda function then gets an instance of that
@@ -4570,16 +4571,16 @@ that was passed as the generic type parameter. The lambda function then gets an 
 <p>The other 2 functions to create destinations are <code>DialogDestination</code> and <code>BottomSheetDestination</code> - they declare destinations that use a dialog or bottom sheet as a container instead of being shown
 full screen.</p>
 <p>These destinations can then be passed to a <code>NavHost</code> by putting them into a set:
-<div class="highlight"><pre><span></span><code><span class="n">setContent</span> <span class="p">{</span>
-    <span class="n">NavHost</span><span class="p">(</span>
-        <span class="n">startRoute</span> <span class="o">=</span> <span class="n">HomeScreenRoute</span><span class="p">,</span> <span class="c1">// route to the screen that should be shown initially</span>
-        <span class="n">destinations</span> <span class="o">=</span> <span class="n">setOf</span><span class="p">(</span><span class="n">homeDestination</span><span class="p">,</span> <span class="n">detailScreenDestination</span><span class="p">)</span>
-    <span class="p">)</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="n">setContent</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">NavHost</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">startRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HomeScreenRoute</span><span class="p">,</span><span class="w"> </span><span class="c1">// route to the screen that should be shown initially</span><span class="w"></span>
+<span class="w">        </span><span class="n">destinations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setOf</span><span class="p">(</span><span class="n">homeDestination</span><span class="p">,</span><span class="w"> </span><span class="n">detailScreenDestination</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <h4 id="fragment">Fragment<a class="headerlink" href="#fragment" title="Permanent link">&para;</a></h4>
 <p>The approach for Fragments is very similar</p>
-<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">detailScreenDestination</span><span class="p">:</span> <span class="n">NavDestination</span> <span class="o">=</span> <span class="n">ScreenDestination</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="p">,</span> <span class="n">DetailFragment</span><span class="o">&gt;</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">detailScreenDestination</span><span class="p">:</span><span class="w"> </span><span class="n">NavDestination</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScreenDestination</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="p">,</span><span class="w"> </span><span class="n">DetailFragment</span><span class="o">&gt;</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
 <p>The <code>ScreenDestination</code> function will return a new <code>NavDestination</code> which is linked to the route
 that was passed as the first generic type parameter. The second type parameter is the <code>Fragment</code>
@@ -4588,60 +4589,60 @@ that will be shown for this destination.</p>
 destination. BottomSheetDestination does not exist because this would simply be a
 <code>DialogDestination</code> with a <code>BottomSheetDialogFragment</code>.</p>
 <p>These destinations can then be passed to a <code>NavHostFragment</code> by putting them into a set:
-<div class="highlight"><pre><span></span><code><span class="n">navHostFragment</span><span class="p">.</span><span class="na">setGraph</span><span class="p">(</span>
-    <span class="n">startRoute</span> <span class="o">=</span> <span class="n">HomeScreenRoute</span><span class="p">,</span> <span class="c1">// route to the screen that should be shown initially</span>
-    <span class="n">destinations</span> <span class="o">=</span> <span class="n">setOf</span><span class="p">(</span><span class="n">homeDestination</span><span class="p">,</span> <span class="n">detailScreenDestination</span><span class="p">)</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">navHostFragment</span><span class="p">.</span><span class="na">setGraph</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">startRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HomeScreenRoute</span><span class="p">,</span><span class="w"> </span><span class="c1">// route to the screen that should be shown initially</span><span class="w"></span>
+<span class="w">    </span><span class="n">destinations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setOf</span><span class="p">(</span><span class="n">homeDestination</span><span class="p">,</span><span class="w"> </span><span class="n">detailScreenDestination</span><span class="p">)</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div></p>
 <p>Inside a Fragment the <code>requireRoute</code> extension method can be used to obtain the <code>NavRoute</code>
 used to navigate to it.</p>
 <p>For example the <code>DetailFragment</code> could do this to obtain <code>DetailScreenRoute</code> and access the <code>id</code> in
 it:
-<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">route</span> <span class="o">=</span> <span class="n">requireRoute</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="o">&gt;</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">route</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">requireRoute</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="o">&gt;</span><span class="p">()</span><span class="w"></span>
 </code></pre></div></p>
 <h4 id="scalability">Scalability<a class="headerlink" href="#scalability" title="Permanent link">&para;</a></h4>
 <p>For the simplicity of the examples above the destinations were just kept in a variable and
 the set was created directly calling <code>NavHost</code>/<code>setGraph</code>. In practice it makes more sense
 to use dagger multibindings for these:</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@Module</span>
-<span class="kd">object</span> <span class="nc">DetailScreenModule</span> <span class="p">{</span>
-    <span class="nd">@Provides</span>
-    <span class="nd">@IntoSet</span>
-    <span class="kd">fun</span> <span class="nf">provideDetailScreenDestinations</span><span class="p">():</span> <span class="n">NavDestination</span> <span class="o">=</span> <span class="n">ScreenDestination</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="n">DetailScreen</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@Module</span><span class="w"></span>
+<span class="kd">object</span><span class="w"> </span><span class="nc">DetailScreenModule</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Provides</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@IntoSet</span><span class="w"></span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">provideDetailScreenDestinations</span><span class="p">():</span><span class="w"> </span><span class="n">NavDestination</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScreenDestination</span><span class="o">&lt;</span><span class="n">DetailScreenRoute</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">DetailScreen</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Then an <code>Activity</code> or something else can simply inject a <code>Set&lt;NavDestination&gt;</code>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MainActivity</span> <span class="p">:</span> <span class="n">ComponentActivity</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nd">@Inject</span>
-    <span class="kd">lateinit</span> <span class="kd">var</span> <span class="nv">destinations</span><span class="p">:</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">NavDestination</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ComponentActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Inject</span><span class="w"></span>
+<span class="w">    </span><span class="kd">lateinit</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">destinations</span><span class="p">:</span><span class="w"> </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">NavDestination</span><span class="o">&gt;</span><span class="w"></span>
 
-    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">()</span>
-        <span class="c1">// inject the activity</span>
-        <span class="n">setContent</span><span class="p">{</span>
-            <span class="n">NavHost</span><span class="p">(</span>
-                <span class="n">startRoute</span> <span class="o">=</span> <span class="n">HomeScreenRoute</span><span class="p">,</span>
-                <span class="n">destinations</span> <span class="o">=</span> <span class="n">destinations</span>
-            <span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// inject the activity</span><span class="w"></span>
+<span class="w">        </span><span class="n">setContent</span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">NavHost</span><span class="p">(</span><span class="w"></span>
+<span class="w">                </span><span class="n">startRoute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HomeScreenRoute</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="n">destinations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">destinations</span><span class="w"></span>
+<span class="w">            </span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <h2 id="nav-events">Nav events<a class="headerlink" href="#nav-events" title="Permanent link">&para;</a></h2>
 <p>The third main class that the library provides is <code>NavEventNavigator</code>. This class solves the first
 of our 2 problems, triggering navigation from outside the UI layer. For that it has all the
 primitive navigation operations:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// navigate to the destination that the given route leads to</span>
-<span class="n">navigator</span><span class="p">.</span><span class="na">navigateTo</span><span class="p">(</span><span class="n">DetailScreenRoute</span><span class="p">(</span><span class="s">&quot;some-id&quot;</span><span class="p">))</span>
-<span class="c1">// navigate up in the hierarchy</span>
-<span class="n">navigator</span><span class="p">.</span><span class="na">navigateUp</span><span class="p">()</span>
-<span class="c1">// navigate to the previous destination in the backstack</span>
-<span class="n">navigator</span><span class="p">.</span><span class="na">navigateBack</span><span class="p">()</span>
-<span class="c1">// navigate back to the destination belonging to the referenced route and remove all destinations</span>
-<span class="c1">// in between from the back stack, depending on inclusive the destination</span>
-<span class="n">navigator</span><span class="p">.</span><span class="na">navigateBackTo</span><span class="o">&lt;</span><span class="n">MainScreenRoute</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inclusive</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// navigate to the destination that the given route leads to</span><span class="w"></span>
+<span class="n">navigator</span><span class="p">.</span><span class="na">navigateTo</span><span class="p">(</span><span class="n">DetailScreenRoute</span><span class="p">(</span><span class="s">&quot;some-id&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="c1">// navigate up in the hierarchy</span><span class="w"></span>
+<span class="n">navigator</span><span class="p">.</span><span class="na">navigateUp</span><span class="p">()</span><span class="w"></span>
+<span class="c1">// navigate to the previous destination in the backstack</span><span class="w"></span>
+<span class="n">navigator</span><span class="p">.</span><span class="na">navigateBack</span><span class="p">()</span><span class="w"></span>
+<span class="c1">// navigate back to the destination belonging to the referenced route and remove all destinations</span><span class="w"></span>
+<span class="c1">// in between from the back stack, depending on inclusive the destination</span><span class="w"></span>
+<span class="n">navigator</span><span class="p">.</span><span class="na">navigateBackTo</span><span class="o">&lt;</span><span class="n">MainScreenRoute</span><span class="o">&gt;</span><span class="p">(</span><span class="n">inclusive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <p>These methods can be called from anywhere and it&rsquo;s safe to hold an instance of the
 <code>NavEventNavigator</code> in places where it survives configuration changes.</p>
@@ -4650,9 +4651,9 @@ the Fragment lifecycle methods or <code>NavigationSetup(navigator)</code> from a
 <p>It&rsquo;s possible to simply instantiate an instance of <code>NavEventNavigator</code> but in the Freeletics code
 base we usually create a subclass in each feature module that has some higher level methods. For
 example it could have a method that encapsulates the creation of the route:
-<div class="highlight"><pre><span></span><code><span class="kd">fun</span> <span class="nf">navigateToDetail</span><span class="p">(</span><span class="n">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">navigateTo</span><span class="p">(</span><span class="n">DetailScreenRoute</span><span class="p">(</span><span class="n">id</span><span class="p">))</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kd">fun</span><span class="w"> </span><span class="nf">navigateToDetail</span><span class="p">(</span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">navigateTo</span><span class="p">(</span><span class="n">DetailScreenRoute</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 They can also contain more complex logic like navigating to one route or another based on a
 parameter or first calling <code>navigateBackTo</code> and then <code>navigateTo</code> with a new route. This
@@ -4680,61 +4681,61 @@ other destinations.</p>
 <p>For an <code>Activity</code> in the same app it&rsquo;s recommended to extend <code>Parcelable</code> with will allow the
 started <code>Activity</code> to obtain the route and use it to easily access any parameter.</p>
 <p>This is example shows the route and destination for a <code>SettingsActivity</code>:
-<div class="highlight"><pre><span></span><code><span class="nd">@Parcelize</span>
-<span class="kd">data</span> <span class="kd">class</span> <span class="nc">SettingsActivityRoute</span><span class="p">(</span>
-    <span class="kd">val</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-<span class="p">)</span> <span class="p">:</span> <span class="n">ActivityRoute</span><span class="p">,</span> <span class="n">Parcelable</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@Parcelize</span><span class="w"></span>
+<span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">SettingsActivityRoute</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ActivityRoute</span><span class="p">,</span><span class="w"> </span><span class="n">Parcelable</span><span class="w"></span>
 
-<span class="kd">val</span> <span class="nv">extraActivityDestination</span><span class="p">:</span> <span class="n">NavDestination</span> <span class="o">=</span> <span class="n">ActivityDestination</span><span class="o">&lt;</span><span class="n">SettingsRoute</span><span class="o">&gt;</span><span class="p">(</span>
-    <span class="n">intent</span> <span class="o">=</span> <span class="n">Intent</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">SettingsActivity</span><span class="o">::</span><span class="n">class</span><span class="p">)</span>
-<span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">extraActivityDestination</span><span class="p">:</span><span class="w"> </span><span class="n">NavDestination</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ActivityDestination</span><span class="o">&lt;</span><span class="n">SettingsRoute</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">SettingsActivity</span><span class="o">::</span><span class="n">class</span><span class="p">)</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div></p>
 <p>In the case of external activities <code>Parcelable</code> can&rsquo;t be used because it would crash the other app.
 It is possible to add static extras to the destination or to dynamically add extras to the route
 by implementing <code>intentExtras</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// minimal route</span>
-<span class="kd">object</span> <span class="nc">PlayStoreRoute</span> <span class="p">:</span> <span class="n">ActivityRoute</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// minimal route</span><span class="w"></span>
+<span class="kd">object</span><span class="w"> </span><span class="nc">PlayStoreRoute</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ActivityRoute</span><span class="w"></span>
 
-<span class="kd">val</span> <span class="nv">playStoreDestination</span><span class="p">:</span> <span class="n">NavDestination</span> <span class="o">=</span> <span class="n">ActivityDestination</span><span class="o">&lt;</span><span class="n">PlayStoreRoute</span><span class="o">&gt;</span><span class="p">(</span>
-    <span class="c1">// full intent is statically defined</span>
-    <span class="n">intent</span> <span class="o">=</span> <span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_VIEW</span><span class="p">,</span> <span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;market://details?id=</span><span class="si">${</span><span class="n">context</span><span class="p">.</span><span class="na">packageName</span><span class="si">}</span><span class="s">&quot;</span><span class="p">))</span>
-<span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">playStoreDestination</span><span class="p">:</span><span class="w"> </span><span class="n">NavDestination</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ActivityDestination</span><span class="o">&lt;</span><span class="n">PlayStoreRoute</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// full intent is statically defined</span><span class="w"></span>
+<span class="w">    </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_VIEW</span><span class="p">,</span><span class="w"> </span><span class="n">Uri</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="s">&quot;market://details?id=</span><span class="si">${</span><span class="n">context</span><span class="p">.</span><span class="na">packageName</span><span class="si">}</span><span class="s">&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 
-<span class="c1">// route with extra values</span>
-<span class="kd">class</span> <span class="nc">ShareRoute</span><span class="p">(</span>
-    <span class="kd">private</span> <span class="kd">val</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-    <span class="kd">private</span> <span class="kd">val</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span>
-<span class="p">)</span> <span class="p">:</span> <span class="n">ActivityRoute</span> <span class="p">{</span>
-    <span class="c1">// the returned Intent is filled into the Intent of the destination by calling</span>
-    <span class="c1">// destinationIntent.fillIn(fillInIntent())</span>
-    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">fillInIntent</span><span class="p">()</span> <span class="o">=</span> <span class="n">Intent</span><span class="p">()</span>
-        <span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_TITLE</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_INTENT</span><span class="p">,</span> <span class="n">Intent</span><span class="p">().</span><span class="na">apply</span> <span class="p">{</span>
-            <span class="n">action</span> <span class="o">=</span> <span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_SEND</span>
-            <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;text/plain&quot;</span>
-            <span class="n">putExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_TEXT</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
-        <span class="p">})</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="c1">// route with extra values</span><span class="w"></span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">ShareRoute</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">title</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">message</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ActivityRoute</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// the returned Intent is filled into the Intent of the destination by calling</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// destinationIntent.fillIn(fillInIntent())</span><span class="w"></span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">fillInIntent</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_TITLE</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_INTENT</span><span class="p">,</span><span class="w"> </span><span class="n">Intent</span><span class="p">().</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_SEND</span><span class="w"></span>
+<span class="w">            </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;text/plain&quot;</span><span class="w"></span>
+<span class="w">            </span><span class="n">putExtra</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">EXTRA_TEXT</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">})</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">val</span> <span class="nv">shareDestination</span><span class="p">:</span> <span class="n">NavDestination</span> <span class="o">=</span> <span class="n">ActivityDestination</span><span class="o">&lt;</span><span class="n">ShareRoute</span><span class="o">&gt;</span><span class="p">(</span>
-    <span class="c1">// basic intent that is extended with the Intent above</span>
-    <span class="n">intent</span> <span class="o">=</span> <span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_CHOOSER</span><span class="p">)</span>
-<span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">shareDestination</span><span class="p">:</span><span class="w"> </span><span class="n">NavDestination</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ActivityDestination</span><span class="o">&lt;</span><span class="n">ShareRoute</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// basic intent that is extended with the Intent above</span><span class="w"></span>
+<span class="w">    </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_CHOOSER</span><span class="p">)</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 
-<span class="c1">// route with a data uri extra</span>
-<span class="kd">class</span> <span class="nc">BrowserRoute</span><span class="p">(</span>
-    <span class="n">uri</span><span class="p">:</span> <span class="n">Uri</span><span class="p">,</span>
-<span class="p">)</span> <span class="p">:</span> <span class="n">ActivityRoute</span> <span class="p">{</span>
-    <span class="c1">// the returned Intent is filled into the Intent of the destination by calling</span>
-    <span class="c1">// destinationIntent.fillIn(fillInIntent())</span>
-    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">fillInIntent</span><span class="p">()</span> <span class="o">=</span> <span class="n">Intent</span><span class="p">().</span><span class="na">setData</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="c1">// route with a data uri extra</span><span class="w"></span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">BrowserRoute</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">uri</span><span class="p">:</span><span class="w"> </span><span class="n">Uri</span><span class="p">,</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ActivityRoute</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// the returned Intent is filled into the Intent of the destination by calling</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// destinationIntent.fillIn(fillInIntent())</span><span class="w"></span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">fillInIntent</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">().</span><span class="na">setData</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kd">val</span> <span class="nv">browserDestination</span><span class="p">:</span> <span class="n">NavDestination</span> <span class="o">=</span> <span class="n">ActivityDestination</span><span class="o">&lt;</span><span class="n">BrowserRoute</span><span class="o">&gt;</span><span class="p">(</span>
-    <span class="c1">// basic intent that is extended with the Intent above</span>
-    <span class="n">intent</span> <span class="o">=</span> <span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_VIEW</span><span class="p">)</span>
-<span class="p">)</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">browserDestination</span><span class="p">:</span><span class="w"> </span><span class="n">NavDestination</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ActivityDestination</span><span class="o">&lt;</span><span class="n">BrowserRoute</span><span class="o">&gt;</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// basic intent that is extended with the Intent above</span><span class="w"></span>
+<span class="w">    </span><span class="n">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">Intent</span><span class="p">.</span><span class="na">ACTION_VIEW</span><span class="p">)</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <p>All shown approaches can be combined where for example some extras are statically added to the
 <code>Intent</code> when the destination is created and some others are dynamically provided through
@@ -4753,20 +4754,20 @@ things. It can be passed to <code>navigateForResult(request)</code> to launch th
 possible to receive the returned results.</p>
 <p>This is an example navigator that allow navigating to the camera or the system file picker to
 take or pick an image:
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MyNavigator</span> <span class="p">:</span> <span class="n">NavEventNavigator</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">val</span> <span class="nv">cameraImageRequest</span> <span class="o">=</span> <span class="n">registerForActivityResult</span><span class="p">(</span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">TakePicture</span><span class="p">())</span>
-    <span class="kd">val</span> <span class="nv">galleryImageRequest</span> <span class="o">=</span> <span class="n">registerForActivityResult</span><span class="p">(</span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">GetContent</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MyNavigator</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NavEventNavigator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">cameraImageRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerForActivityResult</span><span class="p">(</span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">TakePicture</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">galleryImageRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerForActivityResult</span><span class="p">(</span><span class="n">ActivityResultContracts</span><span class="p">.</span><span class="na">GetContent</span><span class="p">())</span><span class="w"></span>
 
 
-    <span class="kd">fun</span> <span class="nf">takePicture</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span> <span class="n">Uri</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// the uri here is the parameter that the TakePicture contract expects</span>
-        <span class="n">navigateForResult</span><span class="p">(</span><span class="n">cameraImageRequest</span><span class="p">,</span> <span class="n">uri</span><span class="p">)</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">takePicture</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span><span class="w"> </span><span class="n">Uri</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// the uri here is the parameter that the TakePicture contract expects</span><span class="w"></span>
+<span class="w">        </span><span class="n">navigateForResult</span><span class="p">(</span><span class="n">cameraImageRequest</span><span class="p">,</span><span class="w"> </span><span class="n">uri</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">fun</span> <span class="nf">pickPicture</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">navigateForResult</span><span class="p">(</span><span class="n">galleryImageRequest</span><span class="p">,</span> <span class="s">&quot;image/*&quot;</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">pickPicture</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">navigateForResult</span><span class="p">(</span><span class="n">galleryImageRequest</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;image/*&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <p>In the example above <code>cameraImageRequest.results</code> returns a <code>Flow&lt;Boolean&gt;</code> and
 <code>galleryImageRequest.results</code> a <code>Flow&lt;Uri?&gt;</code> which can both be collected to handle the results.</p>
@@ -4785,22 +4786,22 @@ internally use <code>Activity.shouldShowRequestPermissionRationale(permission)</
 denial was a permanent, meaning the user won&rsquo;t be asked again, or not. This is usually not easily
 possible since it requires a reference to an <code>Activity</code>.</p>
 <p>An example usage can look like this:
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">MyNavigator</span> <span class="p">:</span> <span class="n">NavEventNavigator</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// use permissionRequest.results somewhere to handle results</span>
-    <span class="kd">val</span> <span class="nv">permissionRequest</span> <span class="o">=</span> <span class="n">registerForPermissionsResult</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">MyNavigator</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NavEventNavigator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// use permissionRequest.results somewhere to handle results</span><span class="w"></span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">permissionRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerForPermissionsResult</span><span class="p">()</span><span class="w"></span>
 
-    <span class="kd">fun</span> <span class="nf">requestContactsPermission</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span> <span class="n">Uri</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">requestPermissions</span><span class="p">(</span><span class="n">permissionRequest</span><span class="p">,</span> <span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span><span class="p">)</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">requestContactsPermission</span><span class="p">(</span><span class="n">uri</span><span class="p">:</span><span class="w"> </span><span class="n">Uri</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">requestPermissions</span><span class="p">(</span><span class="n">permissionRequest</span><span class="p">,</span><span class="w"> </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">CAMERA</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="kd">fun</span> <span class="nf">requestLocationPermissions</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">requestPermissions</span><span class="p">(</span>
-            <span class="n">permissionRequest</span><span class="p">,</span>
-            <span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span><span class="p">,</span>
-            <span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span><span class="p">,</span>
-        <span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">requestLocationPermissions</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">requestPermissions</span><span class="p">(</span><span class="w"></span>
+<span class="w">            </span><span class="n">permissionRequest</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="n">Manifest</span><span class="p">.</span><span class="na">permission</span><span class="p">.</span><span class="na">ACCESS_FINE_LOCATION</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <h3 id="destination-results">Destination results<a class="headerlink" href="#destination-results" title="Permanent link">&para;</a></h3>
 <p>The last result API of the library is for returning hand handling results from screens inside
@@ -4819,45 +4820,46 @@ from the <code>key</code> property of the request object.</p>
 navigator to send the result and afterwards remove itself from the back stack with <code>navigateBack</code>.</p>
 <p>The navigator for a hypothetical <code>ScreenA</code> that wants to receive a result from <code>ScreenB</code> would look
 like this
-<div class="highlight"><pre><span></span><code><span class="kd">data</span> <span class="kd">class</span> <span class="nc">MessageResult</span><span class="p">(</span><span class="kd">val</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">):</span> <span class="n">Parcelable</span>
+<div class="highlight"><pre><span></span><code><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MessageResult</span><span class="p">(</span><span class="kd">val</span><span class="w"> </span><span class="nv">message</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">):</span><span class="w"> </span><span class="n">Parcelable</span><span class="w"></span>
 
-<span class="kd">class</span> <span class="nc">ScreenANavigator</span> <span class="p">:</span> <span class="n">NavEventNavigator</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// use request.results somewhere to handle the results that ScreenB delivers</span>
-    <span class="kd">val</span> <span class="nv">request</span> <span class="o">=</span> <span class="n">registerForNavigationResult</span><span class="o">&lt;</span><span class="n">ScreenARoute</span><span class="p">,</span> <span class="n">MessageResult</span><span class="o">&gt;</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">ScreenANavigator</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NavEventNavigator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// use request.results somewhere to handle the results that ScreenB delivers</span><span class="w"></span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">registerForNavigationResult</span><span class="o">&lt;</span><span class="n">ScreenARoute</span><span class="p">,</span><span class="w"> </span><span class="n">MessageResult</span><span class="o">&gt;</span><span class="w"></span>
 
-    <span class="kd">fun</span> <span class="nf">navigateToScreenB</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">// if needed ScreenBRoute could also have additional parameters</span>
-        <span class="n">navigateTo</span><span class="p">(</span><span class="n">ScreenBRoute</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="na">key</span><span class="p">))</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">navigateToScreenB</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// if needed ScreenBRoute could also have additional parameters</span><span class="w"></span>
+<span class="w">        </span><span class="n">navigateTo</span><span class="p">(</span><span class="n">ScreenBRoute</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="na">key</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <p>And then the navigator for <code>ScreenB</code>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">ScreenANavigator</span><span class="p">(</span>
-   <span class="kd">val</span> <span class="nv">route</span><span class="p">:</span> <span class="n">ScreenBRoute</span>
-<span class="p">)</span> <span class="p">:</span> <span class="n">NavEventNavigator</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">ScreenANavigator</span><span class="p">(</span><span class="w"></span>
+<span class="w">   </span><span class="kd">val</span><span class="w"> </span><span class="nv">route</span><span class="p">:</span><span class="w"> </span><span class="n">ScreenBRoute</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NavEventNavigator</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-    <span class="kd">fun</span> <span class="nf">deliverMessage</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">deliverNavigationResult</span><span class="p">(</span><span class="n">route</span><span class="p">.</span><span class="na">key</span><span class="p">,</span> <span class="n">MessageResult</span><span class="p">(</span><span class="n">message</span><span class="p">))</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">deliverMessage</span><span class="p">(</span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">deliverNavigationResult</span><span class="p">(</span><span class="n">route</span><span class="p">.</span><span class="na">key</span><span class="p">,</span><span class="w"> </span><span class="n">MessageResult</span><span class="p">(</span><span class="n">message</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <h3 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h3>
 <p>The <code>NavEventNavigator</code> exposes a <code>navEvents</code> property that has <code>Flow&lt;NavEvent&gt;</code> as type. On any
 of the navigation calls this <code>Flow</code> will emit a new <code>NavEvent</code>. To test logic that triggers
 navigation this can be used together with the <a href="https://github.com/cashapp/turbine">Turbine library</a>
 to assert that the correct events are emitted.</p>
-<div class="highlight"><pre><span></span><code><span class="n">navigator</span><span class="p">.</span><span class="na">navEvents</span><span class="p">.</span><span class="na">test</span> <span class="p">{</span>
-    <span class="n">navigator</span><span class="p">.</span><span class="na">navigateTo</span><span class="p">(</span><span class="n">TestRoute</span><span class="p">())</span>
-    <span class="n">assertThat</span><span class="p">(</span><span class="n">awaitItem</span><span class="p">).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="n">NavEvent</span><span class="p">.</span><span class="na">NavigateToEvent</span><span class="p">(</span><span class="n">TestRoute</span><span class="p">()))</span>
-    <span class="n">navigator</span><span class="p">.</span><span class="na">navigateBack</span><span class="p">()</span>
-    <span class="n">assertThat</span><span class="p">(</span><span class="n">awaitItem</span><span class="p">).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="n">NavEvent</span><span class="p">.</span><span class="na">BackEvent</span><span class="p">)</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="n">navigator</span><span class="p">.</span><span class="na">navEvents</span><span class="p">.</span><span class="na">test</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">navigator</span><span class="p">.</span><span class="na">navigateTo</span><span class="p">(</span><span class="n">TestRoute</span><span class="p">())</span><span class="w"></span>
+<span class="w">    </span><span class="n">assertThat</span><span class="p">(</span><span class="n">awaitItem</span><span class="p">).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="n">NavEvent</span><span class="p">.</span><span class="na">NavigateToEvent</span><span class="p">(</span><span class="n">TestRoute</span><span class="p">()))</span><span class="w"></span>
+<span class="w">    </span><span class="n">navigator</span><span class="p">.</span><span class="na">navigateBack</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="n">assertThat</span><span class="p">(</span><span class="n">awaitItem</span><span class="p">).</span><span class="na">isEqualTo</span><span class="p">(</span><span class="n">NavEvent</span><span class="p">.</span><span class="na">BackEvent</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>This is a very simplified example, in reality the test would most likely not call the navigator
 itself but some other code that uses the navigator internally.</p>
 
               
             </article>
+            
           </div>
         </div>
         
@@ -4865,7 +4867,8 @@ itself but some other code that uses the navigator internally.</p>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Modern Android Development - The Freeletics Way" rel="prev">
@@ -4924,10 +4927,10 @@ itself but some other code that uses the navigator internally.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b028fd86.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../assets/javascripts/bundle.0f659f14.min.js"></script>
       
     
   </body>
