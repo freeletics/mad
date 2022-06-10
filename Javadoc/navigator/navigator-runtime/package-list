@@ -29,6 +29,7 @@ $dokka.location:com.freeletics.mad.navigator.internal/RequestPermissionsContract
 $dokka.location:com.freeletics.mad.navigator.internal/RequestPermissionsContract/getSynchronousResult/#android.content.Context#kotlin.collections.List[kotlin.String]/PointingToDeclaration/navigator-runtime/com.freeletics.mad.navigator.internal/-request-permissions-contract/get-synchronous-result.md
 $dokka.location:com.freeletics.mad.navigator.internal/RequestPermissionsContract/parseResult/#kotlin.Int#android.content.Intent?/PointingToDeclaration/navigator-runtime/com.freeletics.mad.navigator.internal/-request-permissions-contract/parse-result.md
 $dokka.location:com.freeletics.mad.navigator////PointingToDeclaration/navigator-runtime/com.freeletics.mad.navigator/index.md
+$dokka.location:com.freeletics.mad.navigator//requireRoute/android.app.Activity#/PointingToDeclaration/navigator-runtime/com.freeletics.mad.navigator/require-route.md
 $dokka.location:com.freeletics.mad.navigator/ActivityResultRequest///PointingToDeclaration/navigator-runtime/com.freeletics.mad.navigator/-activity-result-request/index.md
 $dokka.location:com.freeletics.mad.navigator/ActivityResultRequest/contract/#/PointingToDeclaration/navigator-runtime/com.freeletics.mad.navigator/-activity-result-request/contract.md
 $dokka.location:com.freeletics.mad.navigator/ActivityResultRequest/handleResult/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/navigator-runtime/com.freeletics.mad.navigator/-activity-result-request/handle-result.md

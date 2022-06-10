@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/navigator/navigator-runtime/com.freeletics.mad.navigator/require-route/</loc>
+         <lastmod>2022-06-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://freeletics.github.io/freeletics-mad/Javadoc/navigator/navigator-runtime/com.freeletics.mad.navigator/-activity-result-request/</loc>
          <lastmod>2022-06-10</lastmod>
          <changefreq>daily</changefreq>
