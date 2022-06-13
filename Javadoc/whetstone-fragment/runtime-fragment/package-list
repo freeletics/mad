@@ -1,0 +1,28 @@
+$dokka.format:gfm-v1
+$dokka.linkExtension:md
+$dokka.location:com.freeletics.mad.whetstone.fragment.internal////PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment.internal/index.md
+$dokka.location:com.freeletics.mad.whetstone.fragment.internal//viewModel/androidx.fragment.app.Fragment#kotlin.reflect.KClass[*]#android.os.Bundle#kotlin.Function3[TypeParam(bounds=[kotlin.Any]),androidx.lifecycle.SavedStateHandle,android.os.Bundle,TypeParam(bounds=[androidx.lifecycle.ViewModel])]/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment.internal/view-model.md
+$dokka.location:com.freeletics.mad.whetstone.fragment////PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/index.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/ComposeFragment///PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/index.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/ComposeFragment/ComposeFragment/#kotlin.reflect.KClass[*]#kotlin.reflect.KClass[*]#kotlin.reflect.KClass[*]#kotlin.reflect.KClass[com.freeletics.mad.statemachine.StateMachine[*,*]]#kotlin.reflect.KClass[androidx.fragment.app.Fragment]#kotlin.Boolean#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/-compose-fragment.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/ComposeFragment/coroutinesEnabled/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/coroutines-enabled.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/ComposeFragment/dependencies/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/dependencies.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/ComposeFragment/enableInsetHandling/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/enable-inset-handling.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/ComposeFragment/fragmentBaseClass/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/fragment-base-class.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/ComposeFragment/parentScope/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/parent-scope.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/ComposeFragment/rxJavaEnabled/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/rx-java-enabled.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/ComposeFragment/scope/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/scope.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/ComposeFragment/stateMachine/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/state-machine.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/RendererFragment///PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/index.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/RendererFragment/RendererFragment/#kotlin.reflect.KClass[*]#kotlin.reflect.KClass[*]#kotlin.reflect.KClass[*]#kotlin.reflect.KClass[com.freeletics.mad.statemachine.StateMachine[*,*]]#kotlin.reflect.KClass[*]#kotlin.reflect.KClass[androidx.fragment.app.Fragment]#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/-renderer-fragment.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/RendererFragment/coroutinesEnabled/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/coroutines-enabled.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/RendererFragment/dependencies/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/dependencies.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/RendererFragment/fragmentBaseClass/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/fragment-base-class.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/RendererFragment/parentScope/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/parent-scope.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/RendererFragment/rendererFactory/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/renderer-factory.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/RendererFragment/rxJavaEnabled/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/rx-java-enabled.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/RendererFragment/scope/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/scope.md
+$dokka.location:com.freeletics.mad.whetstone.fragment/RendererFragment/stateMachine/#/PointingToDeclaration/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/state-machine.md
+com.freeletics.mad.whetstone.fragment
+com.freeletics.mad.whetstone.fragment.internal
+

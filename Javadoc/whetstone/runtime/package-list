@@ -1,0 +1,20 @@
+$dokka.format:gfm-v1
+$dokka.linkExtension:md
+$dokka.location:com.freeletics.mad.whetstone.internal////PointingToDeclaration/runtime/com.freeletics.mad.whetstone.internal/index.md
+$dokka.location:com.freeletics.mad.whetstone.internal//asComposeState/com.freeletics.mad.statemachine.StateMachine[TypeParam(bounds=[kotlin.Any]),*]#/PointingToDeclaration/runtime/com.freeletics.mad.whetstone.internal/as-compose-state.md
+$dokka.location:com.freeletics.mad.whetstone.internal//find/android.content.Context#kotlin.reflect.KClass[*]/PointingToDeclaration/runtime/com.freeletics.mad.whetstone.internal/find.md
+$dokka.location:com.freeletics.mad.whetstone.internal//findDependencies/android.content.Context#kotlin.reflect.KClass[*]/PointingToDeclaration/runtime/com.freeletics.mad.whetstone.internal/find-dependencies.md
+$dokka.location:com.freeletics.mad.whetstone.internal/ComposeProviderValueModule///PointingToDeclaration/runtime/com.freeletics.mad.whetstone.internal/-compose-provider-value-module/index.md
+$dokka.location:com.freeletics.mad.whetstone.internal/ComposeProviderValueModule/bindProvidedValues/#/PointingToDeclaration/runtime/com.freeletics.mad.whetstone.internal/-compose-provider-value-module/bind-provided-values.md
+$dokka.location:com.freeletics.mad.whetstone.internal/InternalWhetstoneApi///PointingToDeclaration/runtime/com.freeletics.mad.whetstone.internal/-internal-whetstone-api/index.md
+$dokka.location:com.freeletics.mad.whetstone.internal/InternalWhetstoneApi/InternalWhetstoneApi/#/PointingToDeclaration/runtime/com.freeletics.mad.whetstone.internal/-internal-whetstone-api/-internal-whetstone-api.md
+$dokka.location:com.freeletics.mad.whetstone.internal/WhetstoneViewModelFactory///PointingToDeclaration/runtime/com.freeletics.mad.whetstone.internal/-whetstone-view-model-factory/index.md
+$dokka.location:com.freeletics.mad.whetstone.internal/WhetstoneViewModelFactory/WhetstoneViewModelFactory/#androidx.savedstate.SavedStateRegistryOwner#kotlin.Function1[androidx.lifecycle.SavedStateHandle,androidx.lifecycle.ViewModel]/PointingToDeclaration/runtime/com.freeletics.mad.whetstone.internal/-whetstone-view-model-factory/-whetstone-view-model-factory.md
+$dokka.location:com.freeletics.mad.whetstone.internal/WhetstoneViewModelFactory/create/#kotlin.String#java.lang.Class[TypeParam(bounds=[androidx.lifecycle.ViewModel?])]#androidx.lifecycle.SavedStateHandle/PointingToDeclaration/runtime/com.freeletics.mad.whetstone.internal/-whetstone-view-model-factory/create.md
+$dokka.location:com.freeletics.mad.whetstone////PointingToDeclaration/runtime/com.freeletics.mad.whetstone/index.md
+$dokka.location:com.freeletics.mad.whetstone/ScopeTo///PointingToDeclaration/runtime/com.freeletics.mad.whetstone/-scope-to/index.md
+$dokka.location:com.freeletics.mad.whetstone/ScopeTo/ScopeTo/#kotlin.reflect.KClass[*]/PointingToDeclaration/runtime/com.freeletics.mad.whetstone/-scope-to/-scope-to.md
+$dokka.location:com.freeletics.mad.whetstone/ScopeTo/marker/#/PointingToDeclaration/runtime/com.freeletics.mad.whetstone/-scope-to/marker.md
+com.freeletics.mad.whetstone
+com.freeletics.mad.whetstone.internal
+

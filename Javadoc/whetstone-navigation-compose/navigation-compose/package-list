@@ -1,0 +1,21 @@
+$dokka.format:gfm-v1
+$dokka.linkExtension:md
+$dokka.location:com.freeletics.mad.whetstone.compose.internal////PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose.internal/index.md
+$dokka.location:com.freeletics.mad.whetstone.compose.internal//rememberViewModel/#kotlin.reflect.KClass[*]#kotlin.reflect.KClass[*]#TypeParam(bounds=[com.freeletics.mad.navigator.BaseRoute])#kotlin.Function3[TypeParam(bounds=[kotlin.Any]),androidx.lifecycle.SavedStateHandle,TypeParam(bounds=[com.freeletics.mad.navigator.BaseRoute]),TypeParam(bounds=[androidx.lifecycle.ViewModel])]/PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose.internal/remember-view-model.md
+$dokka.location:com.freeletics.mad.whetstone.compose////PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/index.md
+$dokka.location:com.freeletics.mad.whetstone.compose/DestinationType.BOTTOM_SHEET///PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-destination-type/-b-o-t-t-o-m_-s-h-e-e-t/index.md
+$dokka.location:com.freeletics.mad.whetstone.compose/DestinationType.DIALOG///PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-destination-type/-d-i-a-l-o-g/index.md
+$dokka.location:com.freeletics.mad.whetstone.compose/DestinationType.SCREEN///PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-destination-type/-s-c-r-e-e-n/index.md
+$dokka.location:com.freeletics.mad.whetstone.compose/DestinationType///PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-destination-type/index.md
+$dokka.location:com.freeletics.mad.whetstone.compose/NavDestination///PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-nav-destination/index.md
+$dokka.location:com.freeletics.mad.whetstone.compose/NavDestination/NavDestination/#kotlin.reflect.KClass[com.freeletics.mad.navigator.NavRoute]#com.freeletics.mad.whetstone.compose.DestinationType#kotlin.reflect.KClass[*]/PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-nav-destination/-nav-destination.md
+$dokka.location:com.freeletics.mad.whetstone.compose/NavDestination/destinationScope/#/PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-nav-destination/destination-scope.md
+$dokka.location:com.freeletics.mad.whetstone.compose/NavDestination/route/#/PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-nav-destination/route.md
+$dokka.location:com.freeletics.mad.whetstone.compose/NavDestination/type/#/PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-nav-destination/type.md
+$dokka.location:com.freeletics.mad.whetstone.compose/RootNavDestination///PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-root-nav-destination/index.md
+$dokka.location:com.freeletics.mad.whetstone.compose/RootNavDestination/RootNavDestination/#kotlin.reflect.KClass[com.freeletics.mad.navigator.NavRoot]#kotlin.reflect.KClass[*]/PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-root-nav-destination/-root-nav-destination.md
+$dokka.location:com.freeletics.mad.whetstone.compose/RootNavDestination/destinationScope/#/PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-root-nav-destination/destination-scope.md
+$dokka.location:com.freeletics.mad.whetstone.compose/RootNavDestination/root/#/PointingToDeclaration/navigation-compose/com.freeletics.mad.whetstone.compose/-root-nav-destination/root.md
+com.freeletics.mad.whetstone.compose
+com.freeletics.mad.whetstone.compose.internal
+
