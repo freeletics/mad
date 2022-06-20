@@ -5286,20 +5286,6 @@
   
   
     <li class="md-nav__item">
-      <a href="enable-inset-handling/" class="md-nav__link">
-        Enable inset handling
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="fragment-base-class/" class="md-nav__link">
         Fragment base class
       </a>
@@ -7299,7 +7285,7 @@
 <h1 id="composefragment">ComposeFragment<a class="headerlink" href="#composefragment" title="Permanent link">&para;</a></h1>
 <p>[androidJvm]\
 @<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html">Target</a>(allowedTargets = [<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-f-u-n-c-t-i-o-n/index.html">AnnotationTarget.FUNCTION</a>])</p>
-<p>annotation class <a href="./">ComposeFragment</a>(scope: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;<em>&gt;, parentScope: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;</em>&gt;, dependencies: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;<em>&gt;, stateMachine: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;out StateMachine&lt;</em>, *&gt;&gt;, fragmentBaseClass: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;out <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>&gt;, enableInsetHandling: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>, coroutinesEnabled: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>, rxJavaEnabled: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>)</p>
+<p>annotation class <a href="./">ComposeFragment</a>(scope: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;<em>&gt;, parentScope: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;</em>&gt;, dependencies: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;<em>&gt;, stateMachine: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;out StateMachine&lt;</em>, *&gt;&gt;, fragmentBaseClass: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;out <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>&gt;, coroutinesEnabled: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>, rxJavaEnabled: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>)</p>
 <p>By adding this annotation to a androidx.compose.runtime.Composable function, a Fragment is generated that will have the same name with Fragment as suffix. The Fragment will create a ComposeView that will call the annotated composable. It is required that the annotated function has State as first parameter and (Action) -&gt; Unit as second parameter, where State and Action match the given StateMachine.</p>
 <p>The generated Fragment will use the given <a href="fragment-base-class/">fragmentBaseClass</a> as it&rsquo;s super class, with <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">androidx.fragment.app.Fragment</a> class used as default if nothing is specified.</p>
 <p><strong>StateMachine</strong></p>
@@ -7329,7 +7315,7 @@
 <tbody>
 <tr>
 <td><a href="-compose-fragment/">ComposeFragment</a></td>
-<td>[androidJvm]<br>fun <a href="-compose-fragment/">ComposeFragment</a>(scope: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;<em>&gt;, parentScope: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;</em>&gt;, dependencies: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;<em>&gt;, stateMachine: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;out StateMachine&lt;</em>, *&gt;&gt;, fragmentBaseClass: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;out <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>&gt; = Fragment::class, enableInsetHandling: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false, coroutinesEnabled: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false, rxJavaEnabled: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false)</td>
+<td>[androidJvm]<br>fun <a href="-compose-fragment/">ComposeFragment</a>(scope: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;<em>&gt;, parentScope: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;</em>&gt;, dependencies: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;<em>&gt;, stateMachine: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;out StateMachine&lt;</em>, *&gt;&gt;, fragmentBaseClass: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;out <a href="https://developer.android.com/reference/kotlin/androidx/fragment/app/Fragment.html">Fragment</a>&gt; = Fragment::class, coroutinesEnabled: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false, rxJavaEnabled: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false)</td>
 </tr>
 </tbody>
 </table>
@@ -7349,10 +7335,6 @@
 <tr>
 <td><a href="dependencies/">dependencies</a></td>
 <td>[androidJvm]<br>val <a href="dependencies/">dependencies</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>&lt;*&gt;</td>
-</tr>
-<tr>
-<td><a href="enable-inset-handling/">enableInsetHandling</a></td>
-<td>[androidJvm]<br>val <a href="enable-inset-handling/">enableInsetHandling</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false</td>
 </tr>
 <tr>
 <td><a href="fragment-base-class/">fragmentBaseClass</a></td>
