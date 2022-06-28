@@ -7385,30 +7385,30 @@ as well as some of our own utilities.</p>
 logic from the UI layer and provides a scalable approach to type safe navigation in a highly
 modularized code base.</p>
 <p>For more information check out it&rsquo;s <a href="navigator/README.md">README</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:navigator:0.5.0&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:navigator:0.6.0&#39;</span><span class="w"></span>
 <span class="c1">// when using composables for navigation</span><span class="w"></span>
-<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:navigator-compose:0.5.0&#39;</span><span class="w"></span>
+<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:navigator-compose:0.6.0&#39;</span><span class="w"></span>
 <span class="c1">// when using fragments for navigation (even if these contain composables)</span><span class="w"></span>
-<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:navigator-fragment:0.5.0&#39;</span><span class="w"></span>
+<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:navigator-fragment:0.6.0&#39;</span><span class="w"></span>
 </code></pre></div>
 <h2 id="whetstone">Whetstone<a class="headerlink" href="#whetstone" title="Permanent link">&para;</a></h2>
 <p>Whetstone is a plugin for <a href="https://github.com/square/anvil">Anvil</a> that helps with
 generating dependency injection related code and common boilerplate for screens.</p>
 <p>For more information check out its <a href="whetstone/README.md">README</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">anvil</span><span class="w">  </span><span class="s1">&#39;com.freeletics.mad:whetstone-compiler:0.5.0&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">anvil</span><span class="w">  </span><span class="s1">&#39;com.freeletics.mad:whetstone-compiler:0.6.0&#39;</span><span class="w"></span>
 
-<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-runtime:0.5.0&#39;</span><span class="w"></span>
+<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-runtime:0.6.0&#39;</span><span class="w"></span>
 <span class="c1">// when using composables</span><span class="w"></span>
-<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-runtime-compose:0.5.0&#39;</span><span class="w"></span>
+<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-runtime-compose:0.6.0&#39;</span><span class="w"></span>
 <span class="c1">// when using fragments (even if these contain composables)</span><span class="w"></span>
-<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-runtime-fragment:0.5.0&#39;</span><span class="w"></span>
+<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-runtime-fragment:0.6.0&#39;</span><span class="w"></span>
 
 <span class="c1">// for the integration with Navigator</span><span class="w"></span>
-<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-navigation:0.5.0&#39;</span><span class="w"></span>
+<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-navigation:0.6.0&#39;</span><span class="w"></span>
 <span class="c1">// for the integration with Navigator - when using composables</span><span class="w"></span>
-<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-navigation-compose:0.5.0&#39;</span><span class="w"></span>
+<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-navigation-compose:0.6.0&#39;</span><span class="w"></span>
 <span class="c1">// for the integration with Navigator - when using fragments (even if these contain composables)</span><span class="w"></span>
-<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-navigation-fragment:0.5.0&#39;</span><span class="w"></span>
+<span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:whetstone-navigation-fragment:0.6.0&#39;</span><span class="w"></span>
 </code></pre></div>
 <h2 id="statemachine">StateMachine<a class="headerlink" href="#statemachine" title="Permanent link">&para;</a></h2>
 <p><code>StateMachine</code> is a very simple interface to implement a StateMachine with the concept of emitting
@@ -7417,7 +7417,7 @@ state through a <code>StateFlow</code> and receiving input actions to mutate tha
 <code>StateMachine</code> to a user interface you can look at <a href="https://github.com/gabrielittner/renderer">Renderer</a> for the Android View world.
 In compose the <code>StateMachine</code> can be observed using <code>produceState()</code> and actions can be dispatched
 to it by simply launching them from a <code>CoroutineScope</code> created with <code>rememberCoroutineScope()</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:state-machine:0.5.0&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:state-machine:0.6.0&#39;</span><span class="w"></span>
 </code></pre></div>
 <h2 id="textresource">TextResource<a class="headerlink" href="#textresource" title="Permanent link">&para;</a></h2>
 <p><code>TextResource</code> is a domain specific model to represent text. Abstracts text
@@ -7427,7 +7427,7 @@ This way business logic with text can be easily tested without requiring
 <code>Context</code> and running on a device.</p>
 <p>For more information about the motivation for this abstraction check out this
 <a href="https://freeletics.engineering/2021/01/22/abstraction-text-resource.html">blog post</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:text-resource:0.5.0&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="w"> </span><span class="s1">&#39;com.freeletics.mad:text-resource:0.6.0&#39;</span><span class="w"></span>
 </code></pre></div>
 <h1 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code>Copyright 2021 Freeletics GmbH.
