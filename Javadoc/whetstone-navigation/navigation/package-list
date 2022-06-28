@@ -11,6 +11,9 @@ $dokka.location:com.freeletics.mad.whetstone.internal/NavEntryComponentGetterKey
 $dokka.location:com.freeletics.mad.whetstone.internal/NavEntryComponentGetterKey/NavEntryComponentGetterKey/#kotlin.reflect.KClass[*]/PointingToDeclaration/navigation/com.freeletics.mad.whetstone.internal/-nav-entry-component-getter-key/-nav-entry-component-getter-key.md
 $dokka.location:com.freeletics.mad.whetstone.internal/NavEntryComponentGetterKey/value/#/PointingToDeclaration/navigation/com.freeletics.mad.whetstone.internal/-nav-entry-component-getter-key/value.md
 $dokka.location:com.freeletics.mad.whetstone////PointingToDeclaration/navigation/com.freeletics.mad.whetstone/index.md
+$dokka.location:com.freeletics.mad.whetstone/NavEntry///PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry/index.md
+$dokka.location:com.freeletics.mad.whetstone/NavEntry/NavEntry/#kotlin.reflect.KClass[*]/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry/-nav-entry.md
+$dokka.location:com.freeletics.mad.whetstone/NavEntry/scope/#/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry/scope.md
 $dokka.location:com.freeletics.mad.whetstone/NavEntryComponent///PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry-component/index.md
 $dokka.location:com.freeletics.mad.whetstone/NavEntryComponent/NavEntryComponent/#kotlin.reflect.KClass[*]#kotlin.reflect.KClass[*]#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry-component/-nav-entry-component.md
 $dokka.location:com.freeletics.mad.whetstone/NavEntryComponent/coroutinesEnabled/#/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry-component/coroutines-enabled.md

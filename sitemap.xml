@@ -991,6 +991,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-navigation/navigation/com.freeletics.mad.whetstone/-nav-entry/</loc>
+         <lastmod>2022-06-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-navigation/navigation/com.freeletics.mad.whetstone/-nav-entry/-nav-entry/</loc>
+         <lastmod>2022-06-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-navigation/navigation/com.freeletics.mad.whetstone/-nav-entry/scope/</loc>
+         <lastmod>2022-06-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-navigation/navigation/com.freeletics.mad.whetstone/-nav-entry-component/</loc>
          <lastmod>2022-06-28</lastmod>
          <changefreq>daily</changefreq>
