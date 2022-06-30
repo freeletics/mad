@@ -15,10 +15,8 @@ $dokka.location:com.freeletics.mad.whetstone/NavEntry///PointingToDeclaration/n
 $dokka.location:com.freeletics.mad.whetstone/NavEntry/NavEntry/#kotlin.reflect.KClass[*]/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry/-nav-entry.md
 $dokka.location:com.freeletics.mad.whetstone/NavEntry/scope/#/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry/scope.md
 $dokka.location:com.freeletics.mad.whetstone/NavEntryComponent///PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry-component/index.md
-$dokka.location:com.freeletics.mad.whetstone/NavEntryComponent/NavEntryComponent/#kotlin.reflect.KClass[*]#kotlin.reflect.KClass[*]#kotlin.Boolean#kotlin.Boolean/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry-component/-nav-entry-component.md
-$dokka.location:com.freeletics.mad.whetstone/NavEntryComponent/coroutinesEnabled/#/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry-component/coroutines-enabled.md
+$dokka.location:com.freeletics.mad.whetstone/NavEntryComponent/NavEntryComponent/#kotlin.reflect.KClass[*]#kotlin.reflect.KClass[*]/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry-component/-nav-entry-component.md
 $dokka.location:com.freeletics.mad.whetstone/NavEntryComponent/parentScope/#/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry-component/parent-scope.md
-$dokka.location:com.freeletics.mad.whetstone/NavEntryComponent/rxJavaEnabled/#/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry-component/rx-java-enabled.md
 $dokka.location:com.freeletics.mad.whetstone/NavEntryComponent/scope/#/PointingToDeclaration/navigation/com.freeletics.mad.whetstone/-nav-entry-component/scope.md
 com.freeletics.mad.whetstone
 com.freeletics.mad.whetstone.internal

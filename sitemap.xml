@@ -826,22 +826,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-compose/runtime-compose/com.freeletics.mad.whetstone.compose/-compose-screen/coroutines-enabled/</loc>
-         <lastmod>2022-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-compose/runtime-compose/com.freeletics.mad.whetstone.compose/-compose-screen/dependencies/</loc>
-         <lastmod>2022-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-compose/runtime-compose/com.freeletics.mad.whetstone.compose/-compose-screen/parent-scope/</loc>
-         <lastmod>2022-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-compose/runtime-compose/com.freeletics.mad.whetstone.compose/-compose-screen/rx-java-enabled/</loc>
          <lastmod>2022-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -886,27 +871,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-fragment/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/coroutines-enabled/</loc>
-         <lastmod>2022-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-fragment/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/dependencies/</loc>
-         <lastmod>2022-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-fragment/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/fragment-base-class/</loc>
          <lastmod>2022-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-fragment/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/parent-scope/</loc>
-         <lastmod>2022-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-fragment/runtime-fragment/com.freeletics.mad.whetstone.fragment/-compose-fragment/rx-java-enabled/</loc>
          <lastmod>2022-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -931,16 +901,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-fragment/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/coroutines-enabled/</loc>
-         <lastmod>2022-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-fragment/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/dependencies/</loc>
-         <lastmod>2022-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-fragment/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/fragment-base-class/</loc>
          <lastmod>2022-06-30</lastmod>
          <changefreq>daily</changefreq>
@@ -952,11 +912,6 @@
     </url>
     <url>
          <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-fragment/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/renderer-factory/</loc>
-         <lastmod>2022-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-fragment/runtime-fragment/com.freeletics.mad.whetstone.fragment/-renderer-fragment/rx-java-enabled/</loc>
          <lastmod>2022-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1016,17 +971,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-navigation/navigation/com.freeletics.mad.whetstone/-nav-entry-component/coroutines-enabled/</loc>
-         <lastmod>2022-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-navigation/navigation/com.freeletics.mad.whetstone/-nav-entry-component/parent-scope/</loc>
-         <lastmod>2022-06-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://freeletics.github.io/freeletics-mad/Javadoc/whetstone-navigation/navigation/com.freeletics.mad.whetstone/-nav-entry-component/rx-java-enabled/</loc>
          <lastmod>2022-06-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
