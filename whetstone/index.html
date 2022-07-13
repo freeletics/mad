@@ -7231,7 +7231,7 @@ generated code. In fact migrating an app where each screen uses whetstone from F
 just using Compose is as easy as replacing a single annotation on each screen.</p>
 <h2 id="basic-usage">Basic usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h2>
 <p>Using the library depends a bit on the app it&rsquo;s being used in. If the app
-is 100% compose and does not have any Fragments then the <code>@ComposeScreen</code>
+is 100% Compose UI only and does not have any Fragments then the <code>@ComposeScreen</code>
 annotation is the way to go. For apps built with Fragments there is a
 <code>@ComposeFragment</code> annotation for screens using compose and for screens build
 with views there is <code>@RendererFragment</code>.</p>
@@ -7362,7 +7362,7 @@ for Fragments inside the generated code.</p>
 <p>The last part of the integration is that Whetstone will automatically generate
 a <code>NavDestination</code> for the screen by using the <code>route</code> and <code>type</code>. This
 generated destination is automatically provided into a <code>Set</code> in the component
-that uses <code>destinationScope</code> as it&rsquo;s scope (usually an app wide or Activity
+that uses <code>destinationScope</code> as its scope (usually an app wide or Activity
 level scope). With that it&rsquo;s not necessary to manually create a <code>Set</code>
 of all destinations anymore. It can simply be injected.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
